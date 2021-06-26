@@ -2,3 +2,33 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+
+[submodule "oh-my-zsh"]
+    path = .oh-my-zsh
+    url = https://github.com/ohmyzsh/ohmyzsh
+    ignore = dirty
+
+[submodule "tmux-sensible"]
+    path = .tmux/plugins/tmux-sensible
+    url = https://github.com/tmux-plugins/tmux-sensible
+    ignore = dirty
+
+[submodule "tmux-yank"]
+    path = .tmux/plugins/tmux-yank
+    url = https://github.com/tmux-plugins/tmux-yank
+    ignore = dirty
+
+[submodule "tpm"]
+    path = .tmux/plugins/tpm
+    url = https://github.com/tmux-plugins/tpm
+    ignore = dirty
+
+[submodule "comfortable-motion"]
+    path = .vim/plugged/comfortable-motion.vim
+    url = https://github.com/yuttie/comfortable-motion.vim
+    ignore = dirty
+
+[submodule "vim-visual-multi"]
+    path = .vim/plugged/vim-visual-multi
+    url = https://github.com/mg979/vim-visual-multi
+    ignore = dirty
