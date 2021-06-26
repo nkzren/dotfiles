@@ -7,11 +7,11 @@
 - link:
     ~/.tmux.conf: .tmux.conf
     ~/.tmux: .tmux
-    ~/.vim: .vim
     ~/.vimrc: .vimrc
     ~/.config/nvim: .config/nvim
     ~/.zshrc: .zshrc
     ~/.i3: .i3
+    ~/.config/i3status: .config/i3status
     ~/scripts: scripts
 
 - create:

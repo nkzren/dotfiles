@@ -23,12 +23,22 @@
     url = https://github.com/tmux-plugins/tpm
     ignore = dirty
 
-[submodule "comfortable-motion"]
-    path = .vim/plugged/comfortable-motion.vim
+[submodule "config/nvim/plugged/comfortable-motion.vim"]
+    path = .config/nvim/plugged/comfortable-motion.vim
     url = https://github.com/yuttie/comfortable-motion.vim
     ignore = dirty
 
-[submodule "vim-visual-multi"]
-    path = .vim/plugged/vim-visual-multi
+[submodule "config/nvim/plugged/vim-visual-multi"]
+    path = .config/nvim/plugged/vim-visual-multi
     url = https://github.com/mg979/vim-visual-multi
+    ignore = dirty
+
+[submodule "config/nvim/plugged/gruvbox"]
+    path = .config/nvim/plugged/gruvbox
+    url = https://github.com/morhetz/gruvbox
+    ignore = dirty
+
+[submodule "config/nvim/plugged/nerdtree"]
+    path = .config/nvim/plugged/nerdtree
+    url = https://github.com/preservim/nerdtree
     ignore = dirty
