@@ -11,6 +11,7 @@
     ~/.vimrc: .vimrc
     ~/.zshrc: .zshrc
     ~/.i3: .i3
+    ~/scripts: scripts
 
 - create:
     - ~/.vim/undo-history
