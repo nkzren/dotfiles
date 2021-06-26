@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/usr/share/zsh'
+let g:netrw_dirhist_3='/home/renan/.i3'
+let g:netrw_dirhist_2='/boot/efi'
+let g:netrw_dirhist_1='/home/renan/.tmux'
