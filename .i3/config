@@ -352,7 +352,7 @@ bar {
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+	tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
@@ -451,5 +451,4 @@ bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
 # bindsym --release Ctrl+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`' # Area selection
 
 bindsym --release Print exec shutter -a
-
 bindsym --release Ctrl+Print exec shutter -s
