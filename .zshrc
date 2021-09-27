@@ -116,6 +116,8 @@ if [ ! -z "$CLTDIR" ]; then
     source ~/scripts/clt.sh 
 fi;
 
+alias dotfiles="~/Documents/dev/dotfiles"
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if [ ! -z $(command -v nvim) ]; then

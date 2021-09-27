@@ -452,3 +452,13 @@ bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
 
 bindsym --release Print exec shutter -a
 bindsym --release Ctrl+Print exec shutter -s
+
+# Media keys
+set $play 172
+set $next 171
+set $prev 173
+
+bindcode $play exec playerctl play-pause
+bindcode $next exec playerctl next
+bindcode $prev exec playerctl previous
+
