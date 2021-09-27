@@ -13,6 +13,7 @@
     ~/.i3: .i3
     ~/.config/i3status: .config/i3status
     ~/scripts: scripts
+    ~/.Xresources: .Xresources
 
 - create:
     - ~/.vim/undo-history
