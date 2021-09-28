@@ -112,11 +112,7 @@ if [ ! -z $(command -v kubectl) ]; then
     source ~/scripts/kubectlinit.sh
 fi
 
-if [ ! -z "$CLTDIR" ]; then
-    source ~/scripts/clt.sh 
-fi;
-
-alias dotfiles="~/Documents/dev/dotfiles"
+source ~/scripts/clt.sh &> /dev/null
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -124,6 +120,9 @@ if [ ! -z $(command -v nvim) ]; then
     alias vim='nvim'
     alias vi='nvim'
 fi
+
+alias dotfiles="~/Documents/projects/dotfiles"
+alias zshrc="vi ~/.zshrc"
 
 # TMUX
 
@@ -142,9 +141,10 @@ alias tl='tmux list-sessions'
 function start_tmux() {
     if type tmux &> /dev/null; then
         #if not inside a tmux session, and if no session is started, start a new session
-	if [[ $HOST == "renan-manjaro" && -z "$TMUX" && -z $TERMINAL_CONTEXT ]]; then
+	if [[ -z "$TMUX" && -z $TERMINAL_CONTEXT ]]; then
 		(tmux -2 attach -t def || tmux -2 new-session -t def) 
         fi
     fi
 }
 start_tmux
+
