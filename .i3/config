@@ -449,10 +449,8 @@ bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
 
 # bindsym --release Ctrl+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`' # Area selection
 
-set $SCREENSHOT_PATH=~/Pictures/Screenshots/Flameshot
-
 bindsym --release Print exec flameshot full -c
-bindsym --release Ctrl+Print exec flameshot gui -p $SCREENSHOT_PATH
+bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
 # Media keys
 set $play 172

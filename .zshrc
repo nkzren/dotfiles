@@ -121,7 +121,7 @@ if [ ! -z $(command -v nvim) ]; then
     alias vi='nvim'
 fi
 
-alias dotfiles="~/Documents/projects/dotfiles"
+alias dotfiles="~/Documents/dev/dotfiles"
 alias zshrc="vi ~/.zshrc"
 
 # TMUX
