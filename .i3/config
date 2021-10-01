@@ -4,8 +4,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_left eDP-1
-set $monitor_right HDMI-1
+set $monitor_left DP-0
+set $monitor_right HDMI-0
 
 workspace 1 output $monitor_left
 workspace 2 output $monitor_left
