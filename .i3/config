@@ -310,6 +310,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 15 -locker blurlock
+exec --no-startup-id xrandr --output DP-0 --primary
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -460,4 +461,7 @@ set $prev 173
 bindcode $play exec playerctl play-pause
 bindcode $next exec playerctl next
 bindcode $prev exec playerctl previous
+
+bindsym --release Shift+$mod+P exec autorandr dual && xrandr --output DP-0 --primary
+bindsym --release Shift+$mod+bracketleft exec autorandr rightonly && xrandr --output HDMI-0 --primary
 
