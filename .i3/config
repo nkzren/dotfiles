@@ -4,8 +4,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_left DP-0
-set $monitor_right HDMI-0
+set $monitor_left eDP-1
+set $monitor_right HDMI-1
 
 workspace 1 output $monitor_left
 workspace 2 output $monitor_left
@@ -41,7 +41,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
