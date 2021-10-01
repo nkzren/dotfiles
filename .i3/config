@@ -19,10 +19,10 @@ workspace 9 output $monitor_right
 workspace 0 output $monitor_right
 
 # set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+workspace_layout tabbed
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 3
 default_floating_border normal
 
 # Hide borders
@@ -208,7 +208,6 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="(?i)urxvt"] $ws1
 assign [class="(?i)Firefox"] $ws2
 assign [class="(?i)Discord"] $ws6
 
@@ -446,12 +445,14 @@ mode "$mode_gaps_outer" {
 
 bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
 
-# bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`'
+# bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot/ && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`'
 
-# bindsym --release Ctrl+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`' # Area selection
+# bindsym --release Ctrl+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`' # Area selection
 
-bindsym --release Print exec shutter -a
-bindsym --release Ctrl+Print exec shutter -s
+set $SCREENSHOT_PATH=~/Pictures/Screenshots/Flameshot
+
+bindsym --release Print exec flameshot full -c
+bindsym --release Ctrl+Print exec flameshot gui -p $SCREENSHOT_PATH
 
 # Media keys
 set $play 172
