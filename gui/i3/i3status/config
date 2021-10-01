@@ -19,10 +19,10 @@ order += "cpu_usage"
 order += "memory"
 order += "disk /"
 order += "disk /home"
-order += "disk /mnt/Data"
+# order += "disk /mnt/Data"
 order += "wireless _first_"
-order += "ethernet _first_"
-# order += "battery all"
+# order += "ethernet _first_"
+order += "battery all"
 # order += "load"
 order += "tztime local"
 
@@ -48,6 +48,11 @@ disk "/home" {
 disk "/mnt/Data" {
         # format = " hdd %avail "
         format = " ⛁ %avail "
+}
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
 }
 
 ethernet _first_ {

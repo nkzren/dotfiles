@@ -4,19 +4,19 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_right DP-0
-set $monitor_left HDMI-0
+set $monitor_left HDMI-1
+set $monitor_right eDP-1
 
-workspace 1 output $monitor_right
-workspace 2 output $monitor_right
-workspace 3 output $monitor_right
-workspace 4 output $monitor_right
-workspace 5 output $monitor_right
+workspace 1 output $monitor_left
+workspace 2 output $monitor_left
+workspace 3 output $monitor_left
+workspace 4 output $monitor_left
+workspace 5 output $monitor_left
 workspace 6 output $monitor_left
-workspace 7 output $monitor_left
-workspace 8 output $monitor_left
-workspace 9 output $monitor_left
-workspace 0 output $monitor_left
+workspace 7 output $monitor_right
+workspace 8 output $monitor_right
+workspace 9 output $monitor_right
+workspace 0 output $monitor_right
 
 # set default desktop layout (default is tiling)
 workspace_layout tabbed
@@ -210,9 +210,11 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="(?i)Firefox"] $ws2
-assign [class="(?i)Discord"] $ws6
-assign [class="(?i)Spotify"] $ws0
+assign [class="(?i)brave"] $ws2
+assign [class="(?i)Firefox"] $ws3
+assign [class="(?i)slack"] $ws7
+assign [class="(?i)thunderbird"] $ws8
+assign [class="(?i)spotify"] $ws9
 
 # Open specific applications in floating mode
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
@@ -283,10 +285,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -305,19 +307,28 @@ bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff 
 # Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
+#exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-# exec --no-startup-id xautolock -time 15 -locker i3lock
-exec --no-startup-id xrandr --output $monitor_right --primary
+exec --no-startup-id flameshot
+exec --no-startup-id xautolock -time 15 -locker blurlock
+exec --no-startup-id xrandr --output HDMI-1 --primary
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec --no-startup-id slack
+exec --no-startup-id thunderbird
+exec --no-startup-id hsetroot -solid '#000000'
+exec --no-startup-id xset r rate 250 60
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -464,8 +475,17 @@ mode "$mode_gaps_outer" {
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
-bindsym --release Shift+$mod+P exec autorandr dual
-bindsym --release Shift+$mod+bracketleft exec autorandr hdmi
+# Media keys
+set $play 172
+set $next 171
+set $prev 173
+
+bindcode $play exec playerctl play-pause
+bindcode $next exec playerctl next
+bindcode $prev exec playerctl previous
+
+bindsym --release Shift+$mod+P exec autorandr dual && xrandr --output HDMI-1 --primary
+bindsym --release Shift+$mod+bracketleft exec autorandr note && xrandr --output eDP-1 --primary
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks

@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR=nvim
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -132,8 +134,14 @@ if [ ! -z $(command -v nvim) ]; then
     alias vi='nvim'
 fi
 
-alias dotfiles="~/Documents/dev/dotfiles"
+alias dotfiles="~/Documents/projects/dotfiles"
 alias zshrc="vi ~/.zshrc"
+
+xset r rate 250 60
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
 
 # TMUX
 

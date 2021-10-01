@@ -87,11 +87,6 @@ DIR=/
 interval=10
 separator=false
 
-[disk]
-label=data ⛁ 
-DIR=/mnt/Data
-interval=10
-
 #[wifi]
 #INTERFACE=wlp0s20f3
 #label=w: 
@@ -108,22 +103,14 @@ color=#00FF00
 interval=10
 separator=false
 
-[bandwidth]
+#[bandwidth]
 #INTERFACE=eth0
-interval=1
+#interval=1
 
 
 #[load_average]
 #label=LOAD
 #interval=10
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-#[battery]
-#label=BAT
-#label=⚡
-#interval=30
 
 [rofi-calendar]
 interval=600
@@ -190,6 +177,14 @@ KEY=NUM
 markup=pango
 interval=once
 signal=11
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+#label=BAT
+label=⚡
+interval=30
 
 [volume-pipewire]
 interval=persist
