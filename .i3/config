@@ -351,11 +351,14 @@ set_from_resource $term_color15    color15
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
+# Cycle keyboard layouts
+bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	#i3bar_command i3bar
 	# status_command i3status | ~/.i3/i3-keyboard-layout i3status
-    status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
+    status_command SCRIPT_DIR=~/.config/i3blocks i3blocks | ~/.i3/i3-keyboard-layout i3status
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -451,7 +454,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+Mod1+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
 
 # bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot/ && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`'
 

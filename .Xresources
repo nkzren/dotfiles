@@ -274,7 +274,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 !
 
 ! Resize font on the fly
-URxvt.perl-ext-common:  ...,resize-font,...
+URxvt.perl-ext-common:  resize-font
 
 
 !URxvt.keysym.C-Up:     font-size:increase
