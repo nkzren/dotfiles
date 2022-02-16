@@ -112,6 +112,10 @@ if [ ! -z $(command -v kubectl) ]; then
     source ~/scripts/kubectlinit.sh
 fi
 
+if [ ! -z $(command -v docker) ]; then
+    source ~/scripts/dockerinit.sh
+fi
+
 source ~/scripts/clt.sh &> /dev/null
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

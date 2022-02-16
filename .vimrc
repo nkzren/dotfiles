@@ -1,5 +1,7 @@
 call plug#begin()
 
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'mg979/vim-visual-multi'
 
