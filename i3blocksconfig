@@ -111,6 +111,14 @@ interval=1
 #label=LOAD
 #interval=10
 
+# Battery indicator
+#
+# The battery instance defaults to 0.
+#[battery]
+#label=BAT
+#label=⚡
+#interval=30
+
 [rofi-calendar]
 interval=600
 separator=false
@@ -176,6 +184,7 @@ KEY=NUM
 markup=pango
 interval=once
 signal=11
+<<<<<<< HEAD
 
 # Battery indicator
 #
