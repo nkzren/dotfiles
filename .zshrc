@@ -12,6 +12,8 @@ export ZSH="/home/renan/.oh-my-zsh"
 
 ZSH_THEME=gruvbox
 SOLARIZED_THEME=dark
+
+RPROMPT='$(kube_ps1)'
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -70,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm z vi-mode)
+plugins=(git nvm z vi-mode kube-ps1)
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 MODE_INDICATOR="%F{yellow}+%f"
 VI_MODE_SET_CURSOR=true
