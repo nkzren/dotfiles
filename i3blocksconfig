@@ -61,7 +61,7 @@ separator=false
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=RAM 
+label= 
 #separator=false
 interval=5
 
@@ -86,11 +86,11 @@ label=root ⛁
 DIR=/
 interval=10
 
-[wifi]
-INTERFACE=wlp0s20f3
-label=w: 
-interval=10
-separator=false
+#[wifi]
+#INTERFACE=wlp0s20f3
+#label=w: 
+#interval=10
+#separator=false
 
 # Network interface monitoring
 #
@@ -114,10 +114,10 @@ interval=1
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
+#[battery]
 #label=BAT
-label=⚡
-interval=30
+#label=⚡
+#interval=30
 
 [rofi-calendar]
 interval=600
@@ -129,8 +129,8 @@ SHORTFMT=+%d/%m/%Y
 #LABEL=
 #FONT=Monospace 10
 LEFTCLICK_PREV_MONTH=true
-#PREV_MONTH_TEXT=« previous month «
-#NEXT_MONTH_TEXT=» next month »
+PREV_MONTH_TEXT=« previous «
+NEXT_MONTH_TEXT=» next »
 #ROFI_CONFIG_FILE=/dev/null
 
 # Date Time
@@ -184,3 +184,8 @@ KEY=NUM
 markup=pango
 interval=once
 signal=11
+
+[volume-pipewire]
+interval=persist
+signal=1
+SUBSCRIBE=1
