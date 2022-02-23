@@ -85,6 +85,12 @@ separator=false
 label=root ⛁ 
 DIR=/
 interval=10
+separator=false
+
+[disk]
+label=data ⛁ 
+DIR=/mnt/Data
+interval=10
 
 #[wifi]
 #INTERFACE=wlp0s20f3
