@@ -15,7 +15,7 @@
     ~/.config/i3blocks: .config/i3blocks
     ~/.config/kitty: kitty
     ~/.config/i3blocks/config: i3blocksconfig
-    ~/.config/picom: .config/picom
+    ~/.config/picom: picom
     ~/scripts: scripts
     ~/.Xresources: .Xresources
 
