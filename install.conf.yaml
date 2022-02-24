@@ -10,11 +10,11 @@
     ~/.vimrc: vim/init.vim
     ~/.config/nvim: vim
     ~/.zshrc: zsh/zshrc
-    ~/.i3: .i3
-    ~/.config/i3status: .config/i3status
-    ~/.config/i3blocks: .config/i3blocks
+    ~/.i3: i3/base
+    ~/.config/i3status: i3/i3status
+    ~/.config/i3blocks: i3/i3blocks
+    ~/.config/i3blocks/config: i3/i3blocksconfig
     ~/.config/kitty: kitty
-    ~/.config/i3blocks/config: i3blocksconfig
     ~/.config/picom: picom
     ~/scripts: scripts
     ~/.Xresources: X/resources
