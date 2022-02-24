@@ -9,7 +9,7 @@
     ~/.tmux.conf: tmux/tmuxconfig
     ~/.vimrc: vim/init.vim
     ~/.config/nvim: vim
-    ~/.zshrc: .zshrc
+    ~/.zshrc: zsh/zshrc
     ~/.i3: .i3
     ~/.config/i3status: .config/i3status
     ~/.config/i3blocks: .config/i3blocks
