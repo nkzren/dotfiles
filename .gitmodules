@@ -4,7 +4,7 @@
 	ignore = dirty
 
 [submodule "oh-my-zsh"]
-    path = .oh-my-zsh
+	path = configs/zsh/oh-my-zsh
     url = https://github.com/ohmyzsh/ohmyzsh
     ignore = dirty
 

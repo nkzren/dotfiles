@@ -10,6 +10,7 @@
     ~/.vimrc: vim/init.vim
     ~/.config/nvim: vim
     ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.i3: i3/base
     ~/.config/i3status: i3/i3status
     ~/.config/i3blocks: i3/i3blocks
