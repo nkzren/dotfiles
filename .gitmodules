@@ -45,5 +45,5 @@
 
 [submodule ".config/i3blocks"]
 	path = .config/i3blocks
-	url = https://github.com/vivien/i3blocks
+	url = https://github.com/vivien/i3blocks-contrib
     ignore = dirty
