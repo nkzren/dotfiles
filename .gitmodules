@@ -9,17 +9,17 @@
     ignore = dirty
 
 [submodule "tmux-sensible"]
-    path = .tmux/plugins/tmux-sensible
+	path = configs/tmux/plugins/tmux-sensible
     url = https://github.com/tmux-plugins/tmux-sensible
     ignore = dirty
 
 [submodule "tmux-yank"]
-    path = .tmux/plugins/tmux-yank
+	path = configs/tmux/plugins/tmux-yank
     url = https://github.com/tmux-plugins/tmux-yank
     ignore = dirty
 
 [submodule "tpm"]
-    path = .tmux/plugins/tpm
+	path = configs/tmux/plugins/tpm
     url = https://github.com/tmux-plugins/tpm
     ignore = dirty
 
