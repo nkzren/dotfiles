@@ -17,7 +17,7 @@
     ~/.config/i3blocks/config: i3blocksconfig
     ~/.config/picom: picom
     ~/scripts: scripts
-    ~/.Xresources: .Xresources
+    ~/.Xresources: X/resources
 
 - create:
     - ~/.vim/undo-history
