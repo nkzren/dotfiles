@@ -1,3 +1,3 @@
 # work-related environment script
 **/clt.sh
-scripts/*.sh
+configs/scripts/*.sh
