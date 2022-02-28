@@ -4,8 +4,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_left DP-0
-set $monitor_right HDMI-0
+set $monitor_left HDMI-1
+set $monitor_right DP-1
 
 workspace 1 output $monitor_left
 workspace 2 output $monitor_left
@@ -465,15 +465,6 @@ mode "$mode_gaps_outer" {
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
-# Media keys
-set $play 172
-set $next 171
-set $prev 173
-
-bindcode $play exec playerctl play-pause
-bindcode $next exec playerctl next
-bindcode $prev exec playerctl previous
-
 bindsym --release Shift+$mod+P exec autorandr dual && xrandr --output DP-0 --primary
 bindsym --release Shift+$mod+bracketleft exec autorandr rightonly && xrandr --output HDMI-0 --primary
 
@@ -483,3 +474,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -1%
 bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%
 bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioPlay --release exec playerctl play-pause
+bindsym XF86AudioPause --release exec playerctl play-pause
+bindsym XF86AudioNext --release exec playerctl next
+bindsym XF86AudioPrev --release exec playerctl previous
+
