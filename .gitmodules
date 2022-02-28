@@ -47,3 +47,6 @@
 	path = configs/i3/i3blocks
 	url = https://github.com/vivien/i3blocks-contrib
     ignore = dirty
+[submodule "configs/vim/plugged/nerdtree-git-plugin"]
+	path = configs/vim/plugged/nerdtree-git-plugin
+	url = https://www.github.com/Xuyuanp/nerdtree-git-plugin

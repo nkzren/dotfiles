@@ -4,6 +4,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
