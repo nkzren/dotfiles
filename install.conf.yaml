@@ -15,6 +15,7 @@
     ~/.config/i3status: i3/i3status
     ~/.config/i3blocks: i3/i3blocks
     ~/.config/i3blocks/config: i3/i3blocksconfig
+    ~/.config/rofi: rofi
     ~/.config/kitty: kitty
     ~/.config/picom: picom
     ~/scripts: scripts
