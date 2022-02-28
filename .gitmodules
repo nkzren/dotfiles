@@ -24,26 +24,26 @@
     ignore = dirty
 
 [submodule "config/nvim/plugged/comfortable-motion.vim"]
-    path = .config/nvim/plugged/comfortable-motion.vim
+    path = configs/vim/plugged/comfortable-motion.vim
     url = https://github.com/yuttie/comfortable-motion.vim
     ignore = dirty
 
 [submodule "config/nvim/plugged/vim-visual-multi"]
-    path = .config/nvim/plugged/vim-visual-multi
+    path = configs/vim/plugged/vim-visual-multi
     url = https://github.com/mg979/vim-visual-multi
     ignore = dirty
 
 [submodule "config/nvim/plugged/gruvbox"]
-    path = .config/nvim/plugged/gruvbox
+    path = configs/vim/plugged/gruvbox
     url = https://github.com/morhetz/gruvbox
     ignore = dirty
 
 [submodule "config/nvim/plugged/nerdtree"]
-    path = .config/nvim/plugged/nerdtree
+    path = configs/vim/plugged/nerdtree
     url = https://github.com/preservim/nerdtree
     ignore = dirty
 
-[submodule ".config/i3blocks"]
+[submodule "configs/i3/i3blocks"]
 	path = configs/i3/i3blocks
 	url = https://github.com/vivien/i3blocks-contrib
     ignore = dirty
