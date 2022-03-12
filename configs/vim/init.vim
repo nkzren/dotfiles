@@ -17,6 +17,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set ignorecase
+set smartcase
+
 let g:comfortable_motion_friction=130.0
 let g:comfortable_motion_air_drag=2.2
 

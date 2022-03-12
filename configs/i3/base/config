@@ -4,19 +4,19 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_left HDMI-1
-set $monitor_right DP-1
+set $monitor_right DP-0
+set $monitor_left HDMI-0
 
-workspace 1 output $monitor_left
-workspace 2 output $monitor_left
-workspace 3 output $monitor_left
-workspace 4 output $monitor_left
-workspace 5 output $monitor_left
-workspace 6 output $monitor_right
-workspace 7 output $monitor_right
-workspace 8 output $monitor_right
-workspace 9 output $monitor_right
-workspace 0 output $monitor_right
+workspace 1 output $monitor_right
+workspace 2 output $monitor_right
+workspace 3 output $monitor_right
+workspace 4 output $monitor_right
+workspace 5 output $monitor_right
+workspace 6 output $monitor_left
+workspace 7 output $monitor_left
+workspace 8 output $monitor_left
+workspace 9 output $monitor_left
+workspace 0 output $monitor_left
 
 # set default desktop layout (default is tiling)
 workspace_layout tabbed
@@ -211,9 +211,9 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="(?i)Firefox"] $ws6
-assign [class="(?i)Discord"] $ws1
-assign [class="(?i)Spotify"] $ws4
+assign [class="(?i)Firefox"] $ws2
+assign [class="(?i)Discord"] $ws6
+assign [class="(?i)Spotify"] $ws0
 
 # Open specific applications in floating mode
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
@@ -316,6 +316,7 @@ exec --no-startup-id xautolock -time 15 -locker i3lock
 exec --no-startup-id xrandr --output $monitor_right --primary
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -463,8 +464,8 @@ mode "$mode_gaps_outer" {
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
-bindsym --release Shift+$mod+P exec autorandr dual && xrandr --output DP-1 --primary
-bindsym --release Shift+$mod+bracketleft exec autorandr rightonly && xrandr --output DP-1 --primary
+bindsym --release Shift+$mod+P exec autorandr dual
+bindsym --release Shift+$mod+bracketleft exec autorandr hdmi
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
