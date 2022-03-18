@@ -3,7 +3,7 @@ set -g mouse on
 unbind C-Space
 set -g prefix C-Space
 
-bind-key -n C-k copy-mode
+bind-key -n C-M-k copy-mode
 
 # vi for copy mode
 setw -g mode-keys vi
