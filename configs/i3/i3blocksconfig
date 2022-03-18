@@ -137,7 +137,7 @@ SHORTFMT=+%d/%m/%Y
 LEFTCLICK_PREV_MONTH=true
 PREV_MONTH_TEXT=« previous «
 NEXT_MONTH_TEXT=» next »
-#ROFI_CONFIG_FILE=/dev/null
+ROFI_CONFIG_FILE=~/.config/rofi/config.rasi
 
 # Date Time
 #
