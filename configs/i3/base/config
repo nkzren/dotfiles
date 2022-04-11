@@ -300,7 +300,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+Ctrl+l exec --no-startup-id i3lock -c 0000FF
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k
 
 # Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -312,7 +312,7 @@ exec --no-startup-id flameshot
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 15 -locker i3lock
+# exec --no-startup-id xautolock -time 15 -locker i3lock
 exec --no-startup-id xrandr --output $monitor_right --primary
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
