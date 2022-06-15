@@ -184,7 +184,7 @@ signal=11
 [battery]
 #label=BAT
 label=⚡
-interval=30
+interval=10
 
 [volume-pipewire]
 interval=persist
