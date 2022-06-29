@@ -8,3 +8,4 @@
     ~/.zshrc: 
       path: shells/zsh/zshrc
       force: true
+    ~/.util: util
