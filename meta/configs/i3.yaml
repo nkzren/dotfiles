@@ -3,6 +3,6 @@
   - [git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks] 
 
 - link:
-    ~/.config/i3: gui/i3/base
-    ~/.config/i3/i3status: gui/i3/i3status
-    ~/.config/i3/i3blocks/config: gui/i3/i3blocksconfig
+    ~/.i3: gui/i3/base
+    ~/.config/i3status: gui/i3/i3status
+    ~/.config/i3blocks/config: gui/i3/i3blocksconfig
