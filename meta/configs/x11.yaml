@@ -1,2 +1,3 @@
 - link:
     ~/.Xresources: gui/X11/Xresources
+    ~/.xinitrc: gui/X11/xinitrc
