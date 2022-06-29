@@ -3,3 +3,4 @@
 **/clt.sh
 configs/scripts/*.sh
 editors/vim/plugged
+shells/tmux/plugins
