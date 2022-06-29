@@ -1,1 +1,1 @@
-/home/renan/Documents/projects/dotfiles/editors/vim/vimrc
+/home/renan/Documents/dev/dotfiles/editors/vim/vimrc
