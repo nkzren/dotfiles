@@ -4,3 +4,6 @@
 configs/scripts/*.sh
 editors/vim/plugged
 shells/tmux/plugins
+gui/i3/base/i3blocks
+gui/i3/base/i3status
+
