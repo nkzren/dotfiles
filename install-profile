@@ -14,10 +14,10 @@ DOTBOT_BIN="bin/dotbot"
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-
 cd "${BASE_DIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+
+git -C "${META_DIR}/${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${META_DIR}/${DOTBOT_DIR}"
 
 
 while IFS= read -r config; do
@@ -34,6 +34,10 @@ for config in ${CONFIGS} ${@}; do
     echo -e "$(<"${BASE_DIR}/${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}")\n$(<"${BASE_DIR}/${META_DIR}/${CONFIG_DIR}/${config%"$suffix"}${CONFIG_SUFFIX}")" > "$configFile"
 
     cmd=("${BASE_DIR}/${META_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile")
+    
+    for dir in "${BASE_DIR}"/plugins/*; do
+        cmd=("${cmd[@]}" --plugin-dir ${dir})
+    done
 
     if [[ $config == *"sudo"* ]]; then
         cmd=(sudo "${cmd[@]}")

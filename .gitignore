@@ -1,3 +1,4 @@
 # work-related environment script
+**/__pycache__
 **/clt.sh
 configs/scripts/*.sh
