@@ -53,3 +53,7 @@
 [submodule "configs/vim/plugged/vim-surround"]
 	path = configs/vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "yay"]
+	path = yay
+	url = git@github.com:OxSon/dotbot-yay.git
+    ignore = dirty
