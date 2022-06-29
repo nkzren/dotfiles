@@ -34,6 +34,8 @@ for config in ${@}; do
         cmd=(sudo "${cmd[@]}")
     fi
 
+    echo $(whoami)
+    echo "${cmd[@]}"
     "${cmd[@]}"
     rm -f "$configFile"
 done

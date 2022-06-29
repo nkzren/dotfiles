@@ -2,3 +2,4 @@
 **/__pycache__
 **/clt.sh
 configs/scripts/*.sh
+editors/vim/plugged
