@@ -146,11 +146,8 @@ alias tn='tmux new-session'
 alias tl='tmux list-sessions'
 
 function start_tmux() {
-    if type tmux &> /dev/null; then
-        #if not inside a tmux session, and if no session is started, start a new session
-        if [[ -z "$TMUX" && -z $TERMINAL_CONTEXT && ! -z $(command -v byobu) ]]; then
-		(byobu-tmux -2 attach -t def || byobu-tmux -2 new-session -t def) 
-        fi
+    if [ -x "$(command -v tmux)" ] && [ -x "$(command -v byobu)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+        byobu-tmux attach || byobu-tmux >/dev/null 2>&1
     fi
 }
 start_tmux
