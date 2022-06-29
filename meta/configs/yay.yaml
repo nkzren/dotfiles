@@ -1,2 +1,2 @@
 - shell:
-  - command: sh ${PWD}/scripts/install_yay
+  - command: "sh ${PWD}/scripts/install_yay"

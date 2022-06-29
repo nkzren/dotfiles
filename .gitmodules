@@ -2,51 +2,6 @@
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-
-[submodule "oh-my-zsh"]
-	path = configs/zsh/oh-my-zsh
-    url = https://github.com/ohmyzsh/ohmyzsh
-    ignore = dirty
-
-[submodule "tmux-sensible"]
-	path = configs/tmux/plugins/tmux-sensible
-    url = https://github.com/tmux-plugins/tmux-sensible
-    ignore = dirty
-
-[submodule "tmux-yank"]
-	path = configs/tmux/plugins/tmux-yank
-    url = https://github.com/tmux-plugins/tmux-yank
-    ignore = dirty
-
-[submodule "tpm"]
-	path = configs/tmux/plugins/tpm
-    url = https://github.com/tmux-plugins/tpm
-    ignore = dirty
-
-[submodule "config/nvim/plugged/comfortable-motion.vim"]
-    path = configs/vim/plugged/comfortable-motion.vim
-    url = https://github.com/yuttie/comfortable-motion.vim
-    ignore = dirty
-
-[submodule "config/nvim/plugged/vim-visual-multi"]
-    path = configs/vim/plugged/vim-visual-multi
-    url = https://github.com/mg979/vim-visual-multi
-    ignore = dirty
-
-[submodule "config/nvim/plugged/gruvbox"]
-    path = configs/vim/plugged/gruvbox
-    url = https://github.com/morhetz/gruvbox
-    ignore = dirty
-
-[submodule "config/nvim/plugged/nerdtree"]
-    path = configs/vim/plugged/nerdtree
-    url = https://github.com/preservim/nerdtree
-    ignore = dirty
-
-[submodule "configs/i3/i3blocks"]
-	path = configs/i3/i3blocks
-	url = https://github.com/vivien/i3blocks-contrib
-    ignore = dirty
 [submodule "dotbot-yay"]
 	path = plugins/yay
 	url = git@github.com:OxSon/dotbot-yay.git
