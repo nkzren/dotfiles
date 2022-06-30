@@ -26,7 +26,8 @@ let g:comfortable_motion_air_drag=2.2
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
-" Nerdtree
+" START Nerdtree
+nnoremap <C-a> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
@@ -39,10 +40,17 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close if the only remaining window is a nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-map <C-a> :NERDTreeToggle<CR>
-map <M-1> gT
-map <M-2> gt
-map <M-j> <C-W>j
-map <M-k> <C-W>k
-map <M-h> <C-W>h
-map <M-l> <C-W>l
+" END Nerdtree
+
+" START navigation
+noremap <M-1> :bN<CR>
+noremap <M-2> :bn<CR>
+noremap <M-j> <C-W>j
+noremap <M-k> <C-W>k
+noremap <M-h> <C-W>h
+noremap <M-l> <C-W>l
+" END navigation
+
+noremap yY "+yy
+vnoremap <C-y> "+y
+

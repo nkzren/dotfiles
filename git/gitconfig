@@ -1,0 +1,36 @@
+[user]
+	email = renan.nakazawa0@gmail.com
+	name = nkzren
+[color]
+	ui = auto
+[alias]
+	ci = commit
+	co = checkout
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+	ph = push origin HEAD
+	st = status
+	cob = !git fetch origin && git co -b $1 origin/$1 && echo \"Checked out origin branch:\"
+	cod = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git branch -D $1 2> /dev/null; git cob $1"
+	fu  = fetch origin
+	pum = !git pull origin $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+	fupum = !git co $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git fu && git pum
+	fpm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git pull && git fetch -p"
+	dt = !git push --delete origin $1 && git tag -d $1
+	rebasemaster = !branch=\"`git branch 2>/dev/null | grep \\* | awk '{ print $2 }'`\" && echo \"Rebasing $branch from master/main...\" && git fpm && git co $branch && git rebase $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') -i
+	ca = ci --amend --no-edit
+	ra = ca --reset-author
+	co-ci = "!co_authored_commit(){ usage='usage: git commit -m \"Commit message\" --co \"co_author_name\"\n'; while [ \"${#}\" -gt 0 ]; do case \"${1}\" in -m) shift; message="${1}"; shift;; --co) shift; co_author=\"Co-authored-by: \"${1}\"\n\"; co_authors=\"${co_authors}${co_author}\"; shift;; *) shift;; esac; done; if [ -z \"${co_authors}\" ]; then echo ${usage}; exit 1; fi; if [ -z \"${message}\" ]; then echo ${usage}; exit 1; fi; co_authored_message=\"${message}\n\n\n${co_authors}\"; git commit -m \"${co_authored_message}\"; }; co_authored_commit"
+[merge]
+	keepBackup = false;
+	tool = vimdiff
+[mergetool]
+	prompt = false
+[diff]
+	tool = vimdiff
+	merge = vimdiff
+	compactionHeuristic = true
+[pull]
+	ff = only
+[core]
+	editor = vim
+	hooksPath = /home/renan/.git/hooks

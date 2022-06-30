@@ -1,0 +1,6 @@
+- create:
+  - ~/.git
+
+- link:
+    ~/.git/hooks: git/configs-dir/hooks
+    ~/.gitconfig: git/gitconfig
