@@ -6,7 +6,8 @@ Plug 'mg979/vim-visual-multi'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'morhetz/gruvbox'
-
+Plug 'jiangmiao/auto-pairs'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
