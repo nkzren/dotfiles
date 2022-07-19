@@ -34,3 +34,5 @@
 [core]
 	editor = vim
 	hooksPath = /home/renan/.git/hooks
+[init]
+	defaultBranch = main
