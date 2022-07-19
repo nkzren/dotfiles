@@ -1,1 +1,0 @@
-/home/renan/Documents/dev/dotfiles/editors/vim/vimrc
