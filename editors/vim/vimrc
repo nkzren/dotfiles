@@ -9,6 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -30,7 +31,7 @@ colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
 " START Nerdtree
-nnoremap <C-a> :NERDTreeToggle<CR>
+nnoremap <silent> <C-a> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
@@ -57,3 +58,6 @@ noremap <M-l> <C-W>l
 noremap yY "+yy
 vnoremap <C-y> "+y
 
+" comments
+nmap <C-_> gcc
+vmap <C-_> gc
