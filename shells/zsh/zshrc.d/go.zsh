@@ -1,3 +1,4 @@
 if [ ! -z $(command -v go) ]; then
-    export PATH=$PATH:$(go env GOPATH)/bin
+    export GOPATH=$(go env GOPATH)
+    export PATH=$PATH:$GOPATH/bin
 fi
