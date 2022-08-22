@@ -1,16 +1,18 @@
 call plug#begin()
 
-Plug 'yuttie/comfortable-motion.vim'
-Plug 'tpope/vim-surround'
-Plug 'mg979/vim-visual-multi'
-Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'morhetz/gruvbox'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'jiangmiao/auto-pairs'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown', 'vim-plug']}
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
+Plug 'mg979/vim-visual-multi'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'yuttie/comfortable-motion.vim'
 
 call plug#end()
 
@@ -48,8 +50,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " END Nerdtree
 
 " START navigation
-noremap <M-1> :bN<CR>
-noremap <M-2> :bn<CR>
+noremap <silent> <M-1> :tabp<CR>
+noremap <silent> <M-2> :tabn<CR>
 noremap <M-j> <C-W>j
 noremap <M-k> <C-W>k
 noremap <M-h> <C-W>h
