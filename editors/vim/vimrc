@@ -3,11 +3,13 @@ call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown', 'vim-plug'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'morhetz/gruvbox'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
+Plug 'neoclide/coc.nvim', { 'branch': 'release', 'for': ['javascript'] }
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -16,6 +18,7 @@ Plug 'yuttie/comfortable-motion.vim'
 
 call plug#end()
 
+let mapleader = ","
 syntax on
 set rnu nu
 set mouse=a
@@ -60,6 +63,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " START navigation
 noremap <silent> <M-1> :tabp<CR>
 noremap <silent> <M-2> :tabn<CR>
+noremap <silent> <leader>j :bn<CR>
+noremap <silent> <leader>k :bN<CR>
 noremap <M-j> <C-W>j
 noremap <M-k> <C-W>k
 noremap <M-h> <C-W>h
@@ -74,3 +79,9 @@ vnoremap <C-y> "+y
 " comments
 nmap <C-_> gcc
 vmap <C-_> gc
+
+" Coc
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
