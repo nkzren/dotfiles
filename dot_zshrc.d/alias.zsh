@@ -36,3 +36,5 @@ fi
 if [ ! -z $(command -v helm) ]; then
     source $UTIL_SCRIPTS_DIR/helm-completion.sh
 fi
+
+alias c=chezmoi
