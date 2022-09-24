@@ -14,7 +14,7 @@
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
     refreshPeriod = "168h"
-#[".config/ranger/plugins"]
-#    type = "git-repo"
-#    url = "https://github.com/alexanderjeurissen/ranger_devicons"
-#    refreshPeriod = "168h"
+[".config/ranger/plugins/ranger_devicons"]
+    type = "git-repo"
+    url = "https://github.com/alexanderjeurissen/ranger_devicons"
+    refreshPeriod = "168h"
