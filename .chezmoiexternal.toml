@@ -10,3 +10,11 @@
     type = "file"
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     refreshPeriod = "168h"
+[".tmux/plugins/tpm"]
+    type = "git-repo"
+    url = "https://github.com/tmux-plugins/tpm"
+    refreshPeriod = "168h"
+#[".config/ranger/plugins"]
+#    type = "git-repo"
+#    url = "https://github.com/alexanderjeurissen/ranger_devicons"
+#    refreshPeriod = "168h"
