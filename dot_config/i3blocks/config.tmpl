@@ -117,13 +117,15 @@ interval=1
 #label=LOAD
 #interval=10
 
+{{ if eq .chezmoi.hostname "renan-inspiron5402" }}
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
-#label=BAT
-#label=⚡
-#interval=30
+[battery]
+label=BAT
+label=⚡
+interval=30
+{{ end }}
 
 [rofi-calendar]
 interval=600
