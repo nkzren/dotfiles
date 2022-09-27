@@ -33,8 +33,4 @@ if [ ! -z $(command -v tmux) ]; then
     alias tl='tmux list-sessions'
 fi
 
-if [ ! -z $(command -v helm) ]; then
-    source $UTIL_SCRIPTS_DIR/helm-completion.sh
-fi
-
 alias c=chezmoi
