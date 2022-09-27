@@ -4,8 +4,13 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+{{ if eq .chezmoi.hostname "renan-inspiron5402" }}
+set $monitor_right eDP-1
+set $monitor_left HDMI-1
+{{ else }}
 set $monitor_right DP-1
 set $monitor_left HDMI-1
+{{ end }}
 
 workspace 1 output $monitor_right
 workspace 2 output $monitor_right
