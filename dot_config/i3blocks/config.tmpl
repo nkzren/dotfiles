@@ -77,7 +77,6 @@ interval=5
 # (defaults to 10 for 10%).
 [disk]
 label=home ⛁ 
-#DIR=/mnt/data
 interval=10
 separator=false
 
@@ -87,10 +86,12 @@ DIR=/
 interval=10
 separator=false
 
+{{ if eq .chezmoi.hostname "clovis" }}
 [disk]
 label=data ⛁ 
 DIR=/mnt/Data
 interval=10
+{{ end }}
 
 #[wifi]
 #INTERFACE=wlp0s20f3
