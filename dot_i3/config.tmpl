@@ -4,13 +4,13 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-{{ if eq .chezmoi.hostname "renan-inspiron5402" }}
-set $monitor_right eDP-1
-set $monitor_left HDMI-1
-{{ else }}
+{{ if eq .chezmoi.hostname "clovis" -}}
 set $monitor_right DP-1
 set $monitor_left HDMI-1
-{{ end }}
+{{ else if eq .chezmoi.hostname "renan-inspiron5402" -}}
+set $monitor_right eDP-1
+set $monitor_left HDMI-1
+{{- end }}
 
 workspace 1 output $monitor_right
 workspace 2 output $monitor_right
@@ -37,7 +37,6 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
-
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -211,13 +210,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
-assign [class="(?i)Firefox"] $ws2
+{{ if eq .chezmoi.hostname "clovis" -}}
+assign [class="(?i)Firefox"] $ws1
 assign [class="(?i)Discord"] $ws6
-assign [class="(?i)Spotify"] $ws0
+{{ else if eq .chezmoi.hostname "renan-inspiron5402" -}}
+assign [class="(?i)brave-browser"] $ws2
+assign [class="(?i)Firefox"] $ws3
+assign [class="(?i)Discord"] $ws6
+{{- end }}
 
 # Open specific applications in floating mode
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
@@ -308,7 +308,6 @@ mode "resize" {
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff --date-color=ffffff --pass-volume-keys
 
 # Autostart applications
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
@@ -318,7 +317,11 @@ exec --no-startup-id flameshot
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 15 -locker i3lock
+{{ if eq .chezmoi.hostname "clovis" -}}
 exec --no-startup-id xrandr --output $monitor_right --primary
+{{ else if eq .chezmoi.hostname "renan-inspiron5402" -}}
+exec --no-startup-id xrandr --output $monitor_left --primary
+{{- end }}
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
@@ -461,16 +464,16 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-
-# bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot/ && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`'
-
-# bindsym --release Ctrl+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots/Scrot && mv $f ~/Pictures/Screenshots/Scrot/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/Scrot/`ls -1 -t ~/Pictures/Screenshots/Scrot/ | head -1`' # Area selection
-
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
+# TODO: Custom config by setup?
 bindsym --release Shift+$mod+P exec autorandr dual
+{{- if eq .chezmoi.hostname "clovis" }}
 bindsym --release Shift+$mod+bracketleft exec autorandr hdmi
+{{- else if eq .chezmoi.hostname "renan-inspiron5402" }}
+bindsym --release Shift+$mod+bracketleft exec autorandr note-only
+{{ end }}
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
