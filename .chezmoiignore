@@ -3,3 +3,5 @@ install.sh
 old/
 dot_config/ranger/plugins/*
 
+dot_oh-my-zsh
+
