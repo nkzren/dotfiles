@@ -326,6 +326,9 @@ exec --no-startup-id xrandr --output $monitor_left --primary
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+{{ if eq .chezmoi.hostname "renan-inspiron5402" -}}
+exec --no-startup-id slack
+{{- end}}
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
