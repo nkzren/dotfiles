@@ -5,3 +5,5 @@ dot_config/ranger/plugins/*
 
 dot_oh-my-zsh
 
+dot_fehbg/*.png
+dot_fehbg/*.jpg
