@@ -1,0 +1,7 @@
+export PATH=$PATH:$HOME/.local/bin
+export BROWSER=/usr/bin/firefox
+export EDITOR=/usr/bin/nvim
+
+xset r rate 250 60 
+
+_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
