@@ -336,6 +336,7 @@ bindsym $mod+m bar mode toggle
 
   client.background       #2B2C2B
 
+{{ if not (eq .chezmoi.osRelease.idLike "debian") }}
 #############################
 ### settings for i3-gaps: ###
 #############################
@@ -392,6 +393,7 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+{{ end }}
 
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
