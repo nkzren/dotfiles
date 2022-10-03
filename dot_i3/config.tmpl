@@ -138,7 +138,7 @@ bindsym $mod+minus scratchpad show
 {{ if eq .chezmoi.hostname "clovis" -}}
 assign [class="(?i)Firefox"] $ws1
 assign [class="(?i)Discord"] $ws6
-{{ else if eq .chezmoi.hostname "renan-inspiron5402" -}}
+{{ else if eq .chezmoi.hostname "renan-elo7" -}}
 assign [class="(?i)brave-browser"] $ws2
 assign [class="(?i)Firefox"] $ws3
 assign [class="(?i)Discord"] $ws6
@@ -246,14 +246,14 @@ exec --no-startup-id flameshot
 # exec --no-startup-id xautolock -time 15 -locker i3lock
 {{ if eq .chezmoi.hostname "clovis" -}}
 exec --no-startup-id xrandr --output $monitor_right --primary
-{{ else if eq .chezmoi.hostname "renan-inspiron5402" -}}
+{{ else if eq .chezmoi.hostname "renan-elo7" -}}
 exec --no-startup-id xrandr --output $monitor_left --primary
 {{- end }}
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-{{ if eq .chezmoi.hostname "renan-inspiron5402" -}}
+{{ if eq .chezmoi.hostname "renan-elo7" -}}
 exec --no-startup-id slack
 {{- end}}
 
@@ -403,7 +403,7 @@ bindsym --release Shift+$mod+P exec autorandr dual
 {{- if eq .chezmoi.hostname "clovis" }}
 bindsym --release Shift+$mod+bracketleft exec autorandr left-only
 bindsym --release Shift+$mod+bracketright exec autorandr right-only
-{{- else if eq .chezmoi.hostname "renan-inspiron5402" }}
+{{- else if eq .chezmoi.hostname "renan-elo7" }}
 bindsym --release Shift+$mod+bracketleft exec autorandr note-only
 {{ end }}
 
