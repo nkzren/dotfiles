@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PACKAGES_COMMON="tldr man-db vim neovim bat kitty tmux byobu xclip feh jq curl net-tools pipewire pipewire-pulse sysstat ncdu ntfs-3g"
+{{ if eq .chezmoi.osRelease.idLike "archlinux" -}}
+yay -S --noconfirm $PACKAGES_COMMON \
+    noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
+    nerd-fonts-hack nerd-fonts-mononoki ttf-nerd-fonts-symbols-2048-em-mono
+{{ else if eq .chezmoi.osRelease.idLike "debian" -}}
+sudo apt install -y $PACKAGES_COMMON \
+    fonts-mononoki fonts-hack
+{{- end }}
+

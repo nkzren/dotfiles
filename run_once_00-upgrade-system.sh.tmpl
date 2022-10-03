@@ -2,9 +2,14 @@
 
 set -e
 
+{{ if eq .chezmoi.osRelease.idLike "arch" -}}
 sudo pacman -S --needed git go base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
+{{- else if eq .chezmoi.osRelease.idLike "debian" -}}
+sudo apt update
+sudo apt upgrade -y
+{{- end }}
 
 set +e

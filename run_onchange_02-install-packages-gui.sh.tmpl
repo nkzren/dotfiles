@@ -1,7 +1,11 @@
 {{ if .gui -}}
 #!/bin/bash
 
+{{ if eq .chezmoi.osRelease.idLike "archlinux" -}}
 yay -S --noconfirm i3-gaps i3blocks i3status i3lock-color \
     feh pcmanfm rofi picom network-manager-applet lxappearance \
     autorandr pavucontrol spotify firefox vlc
+{{ else if eq .chezmoi.osRelease.idLike "debian" -}}
+sudo apt install i3
+{{ end }}
 {{ end }}
