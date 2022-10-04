@@ -61,7 +61,7 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec discord
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec spotify
-bindsym $mod+F6 exec brave
+bindsym $mod+F6 exec google-chrome
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -140,6 +140,7 @@ assign [class="(?i)Firefox"] $ws1
 assign [class="(?i)Discord"] $ws6
 {{ else if eq .chezmoi.hostname "renan-elo7" -}}
 assign [class="(?i)brave-browser"] $ws2
+assign [class="(?i)google-chrome"] $ws2
 assign [class="(?i)Firefox"] $ws3
 assign [class="(?i)Discord"] $ws6
 {{- end -}}
