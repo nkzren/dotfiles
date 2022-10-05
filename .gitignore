@@ -1,6 +1,6 @@
 # work-related environment script
 **/__pycache__
-**/clt.sh
+**/*clt.sh
 configs/scripts/*.sh
 editors/vim/plugged
 shells/tmux/plugins
