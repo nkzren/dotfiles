@@ -2,10 +2,10 @@
 #!/bin/bash
 
 PACKAGES_COMMON="feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc"
-{{ if eq .chezmoi.osRelease.idLike "archlinux" -}}
+{{ if eq .chezmoi.osRelease.id "arch" -}}
 yay -S --noconfirm i3-gaps i3blocks i3status i3lock-color network-manager-applet \
     $PACKAGES_COMMON
-{{ else if eq .chezmoi.osRelease.idLike "debian" -}}
+{{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
 sudo apt install -y i3 i3status \
     $PACKAGES_COMMON
 

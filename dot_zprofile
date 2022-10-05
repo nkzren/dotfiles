@@ -2,6 +2,9 @@ export PATH=$PATH:$HOME/.local/bin
 export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 
+if [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
+    autorandr dual
+fi
 xset r rate 250 60 
 
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true

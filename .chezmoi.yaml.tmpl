@@ -1,7 +1,7 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $hasGUI := promptBoolOnce . "hasGUI" "Does this machine have a GUI?" -}}
 {{- $screen_primary := promptStringOnce . "screen_primary" "Primary screen name (check with xrandr --listmonitors)" -}}
-{{- $screen_secondary := promptStringOnce . "screen_secondary" "Primary screen name (check with xrandr --listmonitors)" -}}
+{{- $screen_secondary := promptStringOnce . "screen_secondary" "Secondary screen name" -}}
 
 data:
   email: {{ $email | quote }}
