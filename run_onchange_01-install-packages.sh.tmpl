@@ -1,6 +1,12 @@
 #!/bin/bash
 
-PACKAGES_COMMON="tldr man-db vim neovim bat kitty tmux byobu xclip feh jq curl net-tools pipewire pipewire-pulse sysstat ncdu ntfs-3g acpi"
+PACKAGES_COMMON=$(cat <<- END
+    tldr man-db bat sysstat ncdu ntfs-3g acpi udevil
+    vim neovim kitty tmux byobu
+    xclip feh jq curl jq net-tools
+    pipewire pipewire-pulse
+END
+)
 {{ if eq .chezmoi.osRelease.id "arch" -}}
 yay -S --noconfirm $PACKAGES_COMMON \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
