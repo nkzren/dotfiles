@@ -1,7 +1,7 @@
 call plug#begin()
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown', 'vim-plug'] }
 Plug 'jiangmiao/auto-pairs'
@@ -9,7 +9,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'for': ['javascript'] }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -85,3 +85,5 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
+inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
