@@ -32,7 +32,7 @@
 [pull]
 	ff = only
 [core]
-	editor = vim
+	editor = nvim
 	hooksPath = /home/renan/.git/hooks
 [init]
 	defaultBranch = main
