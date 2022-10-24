@@ -6,7 +6,7 @@ sudo apt install -y \
     vim kitty tmux byobu ripgrep \
     xclip feh jq curl jq net-tools \
     pipewire pipewire-pulse playerctl \
-    fonts-mononoki fonts-hack fd-find
+    fonts-firacode fonts-hack fd-find
 
 sudo snap install --classic nvim
 {{- if .gui }}
@@ -26,7 +26,7 @@ yay -S --noconfirm \
     xclip feh jq curl jq fd net-tools \
     pipewire pipewire-pulse playerctl \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
-    nerd-fonts-hack nerd-fonts-mononoki ttf-nerd-fonts-symbols-2048-em-mono
+    nerd-fonts-hack ttf-fira-code ttf-nerd-fonts-symbols-2048-em-mono
 {{- if .gui }}
 
 yay -S --noconfirm i3-gaps i3blocks i3status i3lock-color network-manager-applet \
