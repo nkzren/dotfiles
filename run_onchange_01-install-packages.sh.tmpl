@@ -1,18 +1,35 @@
 #!/bin/bash
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+# Ubuntu packages
+sudo apt install -y \
+    tldr man-db bat sysstat ncdu ntfs-3g acpi udevil \
+    vim kitty tmux byobu ripgrep \
+    xclip feh jq curl jq net-tools \
+    pipewire pipewire-pulse playerctl \
+    fonts-mononoki fonts-hack fd-find
 
-PACKAGES_COMMON=$(cat <<- END
-    tldr man-db bat sysstat ncdu ntfs-3g acpi udevil
-    vim neovim kitty tmux byobu
-    xclip feh jq curl jq net-tools
-    pipewire pipewire-pulse
-END
-)
-{{ if eq .chezmoi.osRelease.id "arch" -}}
-yay -S --noconfirm $PACKAGES_COMMON \
+sudo snap install --classic nvim
+{{- if .gui }}
+
+sudo apt install -y i3 i3status \
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc
+
+sudo snap install spotify
+{{- end -}}
+{{- end -}}
+
+{{- if eq .chezmoi.osRelease.id "arch" -}}
+# Arch packages
+yay -S --noconfirm \
+    tldr man-db bat sysstat ncdu ntfs-3g acpi udevil \
+    vim neovim kitty tmux byobu ripgrep \
+    xclip feh jq curl jq fd net-tools \
+    pipewire pipewire-pulse playerctl \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
     nerd-fonts-hack nerd-fonts-mononoki ttf-nerd-fonts-symbols-2048-em-mono
-{{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
-sudo apt install -y $PACKAGES_COMMON \
-    fonts-mononoki fonts-hack
-{{- end }}
+{{- if .gui }}
 
+yay -S --noconfirm i3-gaps i3blocks i3status i3lock-color network-manager-applet \
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc
+{{- end -}}
+{{- end -}}
