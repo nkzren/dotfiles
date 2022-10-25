@@ -11,7 +11,6 @@ for _, lsp in ipairs(servers) do
 end
 
 local luasnip = require('luasnip')
-
 local cmp = require('cmp')
 cmp.setup {
   snippet = {
