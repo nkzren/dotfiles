@@ -16,8 +16,8 @@ map('n', 'yY', '"+yy', { noremap = true })
 map('v', '<C-y>', '"+y', { noremap = true })
 
 -- Comfortable motion
-map('n', '<C-d>', ':call comfortable_motion#flick(100)', opts)
-map('n', '<C-u>', ':call comfortable_motion#flick(-100)', opts)
+map('n', '<C-d>', ':call comfortable_motion#flick(100)<CR>', opts)
+map('n', '<C-u>', ':call comfortable_motion#flick(-100)<CR>', opts)
 
 -- Comments
 map('n', '<C-_>', 'gcc', {})
