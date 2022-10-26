@@ -46,3 +46,5 @@ api.nvim_create_autocmd('StdinReadPre', {
 api.nvim_create_autocmd('VimEnter', {
     command = 'if argc() == 0 && !exists("s:std_in") | NERDTree | endif'
 })
+
+require("nvim-autopairs").setup{}

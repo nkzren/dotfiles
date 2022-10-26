@@ -1,15 +1,7 @@
 call plug#begin()
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown', 'vim-plug'] }
-Plug 'jiangmiao/auto-pairs'
-Plug 'kien/ctrlp.vim'
-Plug 'mg979/vim-visual-multi'
-Plug 'morhetz/gruvbox'
-Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'for': ['javascript'] }
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -41,7 +33,6 @@ nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 
 " END Comfortable Motion
 
-colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
 " START Nerdtree
@@ -80,8 +71,3 @@ vnoremap <C-y> "+y
 nmap <C-_> gcc
 vmap <C-_> gc
 
-" Coc
-nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>gy <Plug>(coc-type-definition)
-nmap <silent> <leader>gi <Plug>(coc-implementation)
-nmap <silent> <leader>gr <Plug>(coc-references)
