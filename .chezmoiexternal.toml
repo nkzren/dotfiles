@@ -19,3 +19,7 @@
     type = "git-repo"
     url = "https://github.com/alexanderjeurissen/ranger_devicons"
     refreshPeriod = "168h"
+[".config/ranger/colorschemes"]
+    type = "git-repo"
+    url = "git@github.com:alfunx/ranger-colorschemes.git"
+    refreshPeriod = "168h"
