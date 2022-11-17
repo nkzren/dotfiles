@@ -5,7 +5,7 @@ local let = vim.g
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('fatih/vim-go', {['do'] = ':GoInstallBinaries', ['for'] = 'go' })
-Plug('hashivim/vim-terraform', {['for'] = 'terraform' })
+Plug('hashivim/vim-terraform')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/nvim-cmp')
 Plug('iamcco/markdown-preview.nvim', {['for'] = {'markdown', 'vim-plug'} })

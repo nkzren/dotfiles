@@ -2,13 +2,15 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'gopls', 'tsserver' }
+local servers = { 'gopls', 'eslint' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
   }
 end
+
+vim.cmd "autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll"
 
 local luasnip = require('luasnip')
 local cmp = require('cmp')
