@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/renan/.wallpapers/primary.jpg' '/home/renan/.wallpapers/secondary.jpg' 2> /dev/null
+feh --no-fehbg --bg-scale '/home/renan/.wallpapers/primary.jpg' '/home/renan/.wallpapers/secondary.jpg' 2> /dev/null
