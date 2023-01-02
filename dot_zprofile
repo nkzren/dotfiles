@@ -4,6 +4,8 @@ export EDITOR=/usr/bin/nvim
 
 if [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
     autorandr dual
+elif [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 3 ]]; then
+    autorandr triple
 fi
 xset r rate 250 60 
 
