@@ -24,6 +24,7 @@ Plug('tpope/vim-surround')
 Plug('windwp/nvim-autopairs')
 Plug('Xuyuanp/nerdtree-git-plugin')
 Plug('yuttie/comfortable-motion.vim')
+Plug('mboughaba/i3config.vim')
 
 vim.call('plug#end')
 
