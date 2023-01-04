@@ -302,22 +302,25 @@ exec --no-startup-id nm-applet
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
+exec --no-startup-id kdeconnect-indicator
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 15 -locker i3lock
-{{ if eq .chezmoi.hostname "clovis" -}}
-exec --no-startup-id xrandr --output $monitor_right --primary
-{{ else if eq .chezmoi.hostname "renan-elo7" -}}
-exec --no-startup-id xrandr --output $monitor_left --primary
-{{- end }}
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-{{ if eq .chezmoi.hostname "renan-elo7" -}}
+
+{{ if eq .chezmoi.hostname "clovis" -}}
+# My PC specific
+exec --no-startup-id xrandr --output $monitor_right --primary
+{{ else if eq .chezmoi.hostname "renan-elo7" -}}
+# Elo7 specific
+exec --no-startup-id xrandr --output $monitor_left --primary
 exec --no-startup-id slack
-{{- end}}
+exec --no-startup-id spotify
+{{- end }}
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
