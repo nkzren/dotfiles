@@ -9,7 +9,6 @@ o.mouse='a'
 
 o.tabstop=4
 o.shiftwidth=4
-o.expandtab=true
 
 o.ignorecase=true
 o.smartcase=true
