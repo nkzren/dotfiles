@@ -17,6 +17,7 @@ o.smartcase=true
 require('plugins')
 require('mappings')
 require('configs-lsp')
+require('filetypes')
 
 -- colorscheme gruvbox
 -- hi Normal guibg=NONE ctermbg=NONE
