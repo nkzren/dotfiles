@@ -9,12 +9,15 @@ Plug('hashivim/vim-terraform')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/nvim-cmp')
 Plug('iamcco/markdown-preview.nvim', {['for'] = {'markdown', 'vim-plug'} })
-Plug('nathom/filetype.nvim')
+Plug('kyazdani42/nvim-web-devicons')
 Plug('L3MON4D3/LuaSnip')
+Plug('mboughaba/i3config.vim')
 Plug('mg979/vim-visual-multi')
 Plug('morhetz/gruvbox')
+Plug('nathom/filetype.nvim')
 Plug('neovim/nvim-lspconfig')
 Plug('nvim-lua/plenary.nvim')
+Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.0'})
 Plug('preservim/nerdtree')
 Plug('saadparwaiz1/cmp_luasnip')
@@ -24,9 +27,8 @@ Plug('tpope/vim-surround')
 Plug('windwp/nvim-autopairs')
 Plug('Xuyuanp/nerdtree-git-plugin')
 Plug('yuttie/comfortable-motion.vim')
-Plug('mboughaba/i3config.vim')
 
-vim.call('plug#end')
+vim.call'plug#end'
 
 -- Comfortable Motion
 vim.g.comfortable_motion_no_default_key_mappings = 1
@@ -49,3 +51,4 @@ api.nvim_create_autocmd('VimEnter', {
 })
 
 require("nvim-autopairs").setup{}
+

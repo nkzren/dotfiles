@@ -18,6 +18,7 @@ require('plugins')
 require('mappings')
 require('configs-lsp')
 require('filetypes')
+require('line')
 
 -- colorscheme gruvbox
 -- hi Normal guibg=NONE ctermbg=NONE
