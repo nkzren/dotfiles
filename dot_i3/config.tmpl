@@ -297,6 +297,7 @@ mode "resize" {
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff --date-color=ffffff --pass-volume-keys
 
 # Autostart applications
+exec --no-startup-id firefox
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
@@ -321,6 +322,7 @@ exec --no-startup-id xrandr --output $monitor_right --primary
 exec --no-startup-id xrandr --output $monitor_left --primary
 exec --no-startup-id slack
 exec --no-startup-id spotify
+exec --no-startup-id google-chrome
 {{- end }}
 
 # Color palette used for the terminal ( ~/.Xresources file )
