@@ -2,9 +2,9 @@
 require("filetype").setup({
 	overrides = {
 		complex = {
-			[".json.sample"] = "json",
-			[".properties.sample"] = "jproperties",
-			[".yaml.sample"] = "yaml",
+			[".*json.sample"] = "json",
+			[".*properties.sample"] = "jproperties",
+			[".*yaml.sample"] = "yaml",
 			[".*i3/config"] = "i3config",
 			[".*git/config"] = "gitconfig", -- Included in the plugin
 		},
