@@ -1,2 +1,0 @@
-- shell:
-  - command: "sh ${PWD}/scripts/install_yay"

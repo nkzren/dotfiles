@@ -1,8 +1,0 @@
-- shell:
-  - [rm -rf ~/.config/i3blocks]
-  - [git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks] 
-
-- link:
-    ~/.i3: gui/i3/base
-    ~/.config/i3status: gui/i3/i3status
-    ~/.config/i3blocks/config: gui/i3/i3blocksconfig
