@@ -12,7 +12,7 @@ sudo snap install --classic nvim
 {{- if .gui }}
 
 sudo apt install -y i3 i3status \
-    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc discord
 
 sudo snap install spotify
 {{- end -}}
@@ -29,8 +29,8 @@ yay -S --noconfirm \
     nerd-fonts-hack ttf-fira-code ttf-nerd-fonts-symbols-2048-em-mono
 {{- if .gui }}
 
-yay -S --noconfirm i3-gaps i3blocks i3status i3lock-color network-manager-applet \
-    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc
+yay -S --noconfirm i3-wm i3blocks i3status i3lock-color network-manager-applet \
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc discord
 {{- end -}}
 {{- end -}}
 
