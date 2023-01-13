@@ -69,7 +69,7 @@ assign [class="(?i)Firefox"] $ws1
 assign [class="(?i)Discord"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
 
-{{ if eq .chezmoi.hostname "clovis" -}}
+{{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific workspaces
 {{ else if eq .chezmoi.hostname "renan-elo7" -}}
 # Elo7 specific workspaces
@@ -314,7 +314,7 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-{{ if eq .chezmoi.hostname "clovis" -}}
+{{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
 exec --no-startup-id xrandr --output $monitor_right --primary
 {{ else if eq .chezmoi.hostname "renan-elo7" -}}
@@ -482,7 +482,7 @@ bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flames
 
 # TODO: Custom config by setup?
 bindsym --release Shift+$mod+P exec autorandr dual
-{{- if eq .chezmoi.hostname "clovis" }}
+{{- if eq .chezmoi.hostname "renan" }}
 bindsym --release Shift+$mod+bracketleft exec autorandr left-only
 bindsym --release Shift+$mod+bracketright exec autorandr right-only
 {{- else if eq .chezmoi.hostname "renan-elo7" }}
