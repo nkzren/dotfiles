@@ -24,15 +24,26 @@ sudo snap install spotify discord
 yay -S --noconfirm \
     tldr man-db bat sysstat ncdu ntfs-3g acpi udevil \
     zsh vim neovim kitty tmux byobu ripgrep ranger \
-    xclip feh jq curl jq fd net-tools flameshot \
-    pipewire pipewire-pulse playerctl spotify \
+    xclip feh jq curl fd net-tools flameshot \
+    pipewire pipewire-pulse playerctl \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
     nerd-fonts-hack ttf-fira-code ttf-nerd-fonts-symbols-2048-em-mono
 {{- if .gui }}
 
 yay -S --noconfirm i3-wm i3blocks i3status i3lock-color network-manager-applet \
-    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc discord
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc discord spotify
 {{- end -}}
+{{- end }}
+
+{{- if eq .chezmoi.osRelease.id "fedora" -}}
+# Fedora packages
+sudo dnf install -y \
+	tldr man-db bat sysstat ncdu ntfs-3g acpi \
+	zsh vim neovim kitty tmux byobu fd-find ripgrep ranger sqlite \
+    xclip feh jq curl net-tools flameshot \
+	fira-code-fonts google-noto-cjk-fonts hack-fonts powerline-fonts \
+	pipewire playerctl
+
 {{- end }}
 
 # Install vim-plug
