@@ -127,8 +127,13 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+B exec firefox
-# bindsym $mod+F3 exec pcmanfm
+{{ if eq .chezmoi.hostname "renan" -}}
+# My PC specific
 bindsym $mod+E exec pcmanfm
+{{ else if eq .chezmoi.hostname "renan-elo7" -}}
+# Elo7 specific
+bindsym $mod+E exec nautilus
+{{- end }}
 bindsym $mod+F4 exec discord
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec spotify
@@ -208,6 +213,7 @@ bindsym $mod+minus scratchpad show
 # Open specific applications in floating mode
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
+for_window [class="(?i)Nautilus"] floating enable border pixel 1 resize set 800 600
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
