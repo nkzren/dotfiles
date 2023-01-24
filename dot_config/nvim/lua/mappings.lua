@@ -12,8 +12,13 @@ map('n', '<M-k>', '<C-W>k', opts)
 map('n', '<M-h>', '<C-W>h', opts)
 map('n', '<M-l>', '<C-W>l', opts)
 
-map('n', 'yY', '"+yy', { noremap = true })
-map('v', '<C-y>', '"+y', { noremap = true })
+map('n', '<leader>y', '"+y', { noremap = true })
+map('n', '<leader>Y', '"+yy', { noremap = true })
+map('v', '<leader>y', '"+y', { noremap = true })
+
+map('n', '<leader>p', '"+p', { noremap = true })
+map('n', '<leader>P', '"+P', { noremap = true })
+map('v', '<leader>p', '"+p', { noremap = true })
 
 -- Comfortable motion
 map('n', '<C-d>', ':call comfortable_motion#flick(100)<CR>', opts)

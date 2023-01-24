@@ -2,7 +2,7 @@
 
 
 function start_vpn() {
-    export COMPOSE_FILE=${HOME}/Documents/vpn/aws-vpn-client-docker/docker-compose.yml
+	export COMPOSE_FILE=${HOME}/.aws-vpn-client-docker/docker-compose.yml
     case $1 in
         stop) 
             echo 'Desconectando da VPN'
