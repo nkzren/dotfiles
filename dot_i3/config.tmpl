@@ -65,7 +65,7 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 workspace_layout tabbed
 
 # Open applications on specific workspaces
-assign [class="(?i)Firefox"] $ws1
+assign [class="(?i)Firefox"] $ws2
 assign [class="(?i)Discord"] $ws8
 for_window [class="Spotify"] move to workspace $ws9
 
@@ -73,7 +73,7 @@ for_window [class="Spotify"] move to workspace $ws9
 # My PC specific workspaces
 {{ else if eq .chezmoi.hostname "renan-elo7" -}}
 # Elo7 specific workspaces
-assign [class="(?i)google-chrome"] $ws2
+assign [class="(?i)google-chrome"] $ws3
 assign [class="(?i)slack"] $ws0
 {{ end -}}
 

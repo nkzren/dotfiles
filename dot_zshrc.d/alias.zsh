@@ -38,3 +38,5 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+
+alias kbd='~/.i3/i3-keyboard-layout'
