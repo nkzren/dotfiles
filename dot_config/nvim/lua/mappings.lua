@@ -12,6 +12,11 @@ map('n', '<M-k>', '<C-W>k', opts)
 map('n', '<M-h>', '<C-W>h', opts)
 map('n', '<M-l>', '<C-W>l', opts)
 
+map("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize +5<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize -5<cr>", { desc = "Increase window width" })
+
 map('n', '<leader>y', '"+y', { noremap = true })
 map('n', '<leader>Y', '"+yy', { noremap = true })
 map('v', '<leader>y', '"+y', { noremap = true })
