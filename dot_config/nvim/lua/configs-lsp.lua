@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSP Setup
-local servers = { 'gopls', 'eslint' }
+local servers = { 'gopls', 'eslint', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

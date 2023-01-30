@@ -43,6 +43,7 @@ set('n', '<leader>fh', builtin.help_tags, {})
 
 -- NERDTree
 map('n', '<C-a>',':NERDTreeToggle<CR>' , opts)
+map('n', '<leader><space>',':NERDTreeFind<CR>' , opts)
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
