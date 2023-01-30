@@ -45,7 +45,9 @@ set('n', '<leader>fh', builtin.help_tags, {})
 map('n', '<C-a>',':NERDTreeToggle<CR>' , opts)
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', '<leader>N', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+
+
