@@ -9,6 +9,8 @@ o.mouse='a'
 
 o.tabstop=4
 o.shiftwidth=4
+o.textwidth=80
+o.colorcolumn="81"
 
 o.ignorecase=true
 o.smartcase=true
