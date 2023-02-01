@@ -36,3 +36,5 @@
 	hooksPath = /home/renan/.git/hooks
 [init]
 	defaultBranch = main
+[advice]
+	addIgnoredFile = false
