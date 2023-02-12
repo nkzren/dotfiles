@@ -5,6 +5,7 @@ require("filetype").setup({
 			[".*json.sample"] = "json",
 			[".*properties.sample"] = "jproperties",
 			[".*yaml.sample"] = "yaml",
+			[".*zshrc.sample"] = "zsh",
 			[".*i3/config"] = "i3config",
 			[".*git/config"] = "gitconfig", -- Included in the plugin
 		},
