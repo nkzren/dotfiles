@@ -212,6 +212,7 @@ bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
+for_window [class="(?i)solaar"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Nautilus"] floating enable border pixel 1 resize set 800 600
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -303,7 +304,7 @@ mode "resize" {
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff --date-color=ffffff --pass-volume-keys
 
 # Autostart applications
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
@@ -311,6 +312,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id spotify
+exec --no-startup-id solaar -w hide
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
