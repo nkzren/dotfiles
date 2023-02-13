@@ -4,9 +4,11 @@ require("filetype").setup({
 		complex = {
 			[".*json.sample"] = "json",
 			[".*properties.sample"] = "jproperties",
+			[".*properties"] = "jproperties",
 			[".*yaml.sample"] = "yaml",
 			[".*zshrc.sample"] = "zsh",
 			[".*i3/config"] = "i3config",
+			["dot_zshrc"] = "zsh",
 			[".*git/config"] = "gitconfig", -- Included in the plugin
 		},
 		shebang = {
