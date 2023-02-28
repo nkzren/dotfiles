@@ -3,6 +3,7 @@
 # -e: exit on error
 # -u: exit on unset variables
 set -eu
+GITHUB_USERNAME="${GITHUB_USERNAME:-nkzren}"
 
 if ! chezmoi="$(command -v chezmoi)"; then
   bin_dir="${HOME}/.local/bin"
@@ -23,7 +24,7 @@ fi
 # POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
-set -- init --apply --source="${script_dir}" nkzren
+set -- init --apply --source="${script_dir}" git@github.com:$GITHUB_USERNAME/dotfiles.git
 
 echo "Running 'chezmoi $*'" >&2
 # exec: replace current process with chezmoi
