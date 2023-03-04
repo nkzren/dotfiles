@@ -40,3 +40,5 @@ else
 fi
 
 alias kbd='~/.i3/i3-keyboard-layout'
+
+alias notes='cd ~/tenjin'
