@@ -11,7 +11,12 @@ require('lazy').setup({
 
   -- surround commands
   'tpope/vim-surround',
-  'windwp/nvim-autopairs',
+  {
+    'windwp/nvim-autopairs',
+    config = function()
+      require("nvim-autopairs").setup {}
+    end,
+  },
 
   'nathom/filetype.nvim',
 
@@ -147,7 +152,6 @@ require('lazy').setup({
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   -- { import = 'custom.plugins' },
 }, {})
-
 
 -- Comfortable Motion
 vim.g.comfortable_motion_no_default_key_mappings = 1
