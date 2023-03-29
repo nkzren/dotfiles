@@ -9,6 +9,7 @@ require("filetype").setup({
 			[".*zshrc.sample"] = "zsh",
 			[".*i3/config"] = "i3config",
 			["dot_zshrc"] = "zsh",
+			[".*nginx.*/*.conf"] = "nginx",
 			[".*git/config"] = "gitconfig", -- Included in the plugin
 		},
 		shebang = {

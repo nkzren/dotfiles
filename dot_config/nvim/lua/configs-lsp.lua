@@ -53,6 +53,7 @@ local servers = {
   tsserver = {},
   eslint = {},
 
+
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
