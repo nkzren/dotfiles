@@ -79,9 +79,6 @@ plugins=(git nvm z vi-mode kube-ps1 zshrc.d)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -f /usr/share/nvm/init-nvm.sh ]; then
-    source /usr/share/nvm/init-nvm.sh
-fi
 
 # TMUX
 # Attaches tmux to the last session; creates a new session if none exists.
@@ -92,9 +89,11 @@ function start_tmux() {
 }
 
 start_tmux
-{{ if eq .chezmoi.hostname "renan-elo7" -}}
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+
+# nvm
+[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/renan/.sdkman"
 [[ -s "/home/renan/.sdkman/bin/sdkman-init.sh" ]] && source "/home/renan/.sdkman/bin/sdkman-init.sh"
-{{ end }}
 

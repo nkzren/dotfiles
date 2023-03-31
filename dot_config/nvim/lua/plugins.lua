@@ -20,6 +20,8 @@ require('lazy').setup({
 
   'nathom/filetype.nvim',
 
+  {'fatih/vim-go', ft = 'go'},
+
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
