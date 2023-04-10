@@ -4,7 +4,27 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-{{ template "i3-workspaces" . -}}
+set $monitor_primary {{ .screens.primary }}
+set $monitor_secondary {{ .screens.secondary }}
+{{ if eq .chezmoi.hostname "renan-elo7" -}}
+set $monitor_vertical {{ .screens.tertiary }}
+{{- end }}
+
+workspace 1 output $monitor_primary
+workspace 2 output $monitor_primary
+workspace 3 output $monitor_primary
+workspace 4 output $monitor_primary
+workspace 5 output $monitor_primary
+workspace 6 output $monitor_secondary
+workspace 7 output $monitor_secondary
+workspace 8 output $monitor_secondary
+{{ if eq .chezmoi.hostname "renan-elo7" -}}
+workspace 9 output $monitor_vertical
+workspace 0 output $monitor_vertical
+{{- else -}}
+workspace 9 output $monitor_secondary
+workspace 0 output $monitor_secondary
+{{- end }}
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -66,8 +86,8 @@ workspace_layout tabbed
 
 # Open applications on specific workspaces
 assign [class="(?i)Firefox"] $ws2
-assign [class="(?i)Discord"] $ws8
-for_window [class="Spotify"] move to workspace $ws9
+assign [class="(?i)Discord"] $ws0
+for_window [class="Spotify"] move to workspace $ws8
 
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific workspaces
@@ -128,6 +148,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+B exec firefox
 bindsym $mod+O exec obsidian
+bindsym $mod+Ctrl+n --release exec "xpad"
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
 bindsym $mod+E exec pcmanfm
@@ -213,6 +234,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
+for_window [class="(?i)xpad"] floating enable border pixel 1 resize set 250 250
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
 for_window [class="(?i)solaar"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
