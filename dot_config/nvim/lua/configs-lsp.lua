@@ -13,8 +13,8 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   -- Code movement
-  vim.keymap.set('n', '<leader>d', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<leader>D', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<leader>td', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, bufopts)
 
