@@ -21,6 +21,13 @@ require('lazy').setup({
   'nathom/filetype.nvim',
 
   {'fatih/vim-go', ft = 'go'},
+  {
+    'hashivim/vim-terraform', ft = {'hcl', 'tf'},
+    config = function()
+      vim.g.terraform_fmt_on_save = 1
+      vim.g.terraform_align = 1
+    end
+  },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -124,7 +131,14 @@ require('lazy').setup({
     end,
   },
 
-  { 'yuttie/comfortable-motion.vim' },
+  {
+    'yuttie/comfortable-motion.vim',
+    config = function()
+      vim.g.comfortable_motion_no_default_key_mappings = 1
+      vim.g.comfortable_motion_friction=130.0
+      vim.g.comfortable_motion_air_drag=2.2
+    end
+  },
 
   {
           'preservim/nerdtree',
@@ -154,11 +168,6 @@ require('lazy').setup({
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   -- { import = 'custom.plugins' },
 }, {})
-
--- Comfortable Motion
-vim.g.comfortable_motion_no_default_key_mappings = 1
-vim.g.comfortable_motion_friction=130.0
-vim.g.comfortable_motion_air_drag=2.2
 
 -- NERDTree
 -- Open a Nerdtree when no args
