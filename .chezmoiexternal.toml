@@ -6,7 +6,7 @@
     refreshPeriod = "168h"
 [".oh-my-zsh/custom/plugins/zshrc.d"]
     type = "archive"
-    url = "https://github.com/zshzoo/zshrc.d/archive/master.tar.gz"
+    url = "https://github.com/mattmc3/zshrc.d/archive/master.tar.gz"
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
