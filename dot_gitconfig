@@ -31,6 +31,8 @@
 	compactionHeuristic = true
 [pull]
 	ff = only
+[push]
+	autoSetupRemote = true
 [core]
 	editor = nvim
 	hooksPath = /home/renan/.git/hooks
