@@ -22,11 +22,7 @@ require('lazy').setup({
 
   {'fatih/vim-go', ft = 'go'},
   {
-    'hashivim/vim-terraform', ft = {'hcl', 'tf'},
-    config = function()
-      vim.g.terraform_fmt_on_save = 1
-      vim.g.terraform_align = 1
-    end
+    'hashivim/vim-terraform', ft = {'tf', 'hcl'}
   },
 
   -- Detect tabstop and shiftwidth automatically
