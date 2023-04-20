@@ -1,4 +1,4 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require('lspconfig')
 
@@ -35,6 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+-- servers config 
 local servers = {
   -- clangd = {},
   gopls = {},
@@ -76,7 +77,7 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
-vim.cmd "autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll"
+-- vim.cmd "autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll"
 
 local luasnip = require('luasnip')
 local cmp = require('cmp')
