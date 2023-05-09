@@ -1,13 +1,18 @@
 export PATH=$PATH:$HOME/.local/bin
+{{ if eq .chezmoi.hostname "renan-elo7" -}}
+export BROWSER=/usr/bin/google-chrome
+{{- else -}}
 export BROWSER=/usr/bin/firefox
+{{- end }}
 export EDITOR=/usr/bin/nvim
 export PATH=$PATH:/usr/local/go/bin
+
 
 if [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
     autorandr dual
 elif [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 3 ]]; then
     autorandr triple
 fi
-xset r rate 250 60 
+xset r rate 300 60
 
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
