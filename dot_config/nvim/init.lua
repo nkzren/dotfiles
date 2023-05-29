@@ -35,7 +35,6 @@ o.smartcase=true
 require('plugins')
 require('mappings')
 require('configs-lsp')
-require('filetypes')
 require('line')
 
 -- colorscheme gruvbox

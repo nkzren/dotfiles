@@ -18,8 +18,6 @@ require('lazy').setup({
     end,
   },
 
-  'nathom/filetype.nvim',
-
   {'fatih/vim-go', ft = 'go'},
   {
     'hashivim/vim-terraform', ft = {'tf', 'hcl'}
