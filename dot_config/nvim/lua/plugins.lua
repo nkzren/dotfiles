@@ -17,11 +17,14 @@ require('lazy').setup({
       require("nvim-autopairs").setup {}
     end,
   },
-
-  {'fatih/vim-go', ft = 'go'},
   {
-    'hashivim/vim-terraform', ft = {'tf', 'hcl'}
+    'windwp/nvim-ts-autotag',
+    config = true,
   },
+
+  { 'fatih/vim-go', ft = 'go' },
+  { 'hashivim/vim-terraform', ft = {'terraform', 'hcl'} },
+  { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -37,7 +40,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim', opts = {}, tag = 'legacy' },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',

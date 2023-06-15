@@ -10,6 +10,10 @@ alias kn='kubectl config set-context --current --namespace '
 alias kx='kubectl config use-context '
 alias kcgc='kubectl config get-contexts'
 
+# TF-related
+alias tf=terraform
+alias tg=terragrunt
+
 if [ ! -z $(command -v nvim) ] && [ ! -z $(command -v kubectl) ]; then
     export KUBE_EDITOR='nvim'
 fi
