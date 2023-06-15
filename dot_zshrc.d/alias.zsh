@@ -45,4 +45,6 @@ fi
 
 alias kbd='~/.i3/i3-keyboard-layout'
 
+alias fizmerda='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
+
 alias notes='cd ~/tenjin'
