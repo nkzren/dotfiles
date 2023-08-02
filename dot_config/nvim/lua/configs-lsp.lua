@@ -43,6 +43,7 @@ local servers = {
   -- rust_analyzer = {},
   tsserver = {},
   eslint = {},
+  pylsp = {},
 
   lua_ls = {
     Lua = {

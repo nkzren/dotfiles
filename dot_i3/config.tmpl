@@ -141,8 +141,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+; notify-send --expire-time=500 'brightness up'"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send --expire-time=500 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
