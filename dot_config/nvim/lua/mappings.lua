@@ -52,7 +52,7 @@ set('n', '<leader>N', vim.diagnostic.goto_next, opts)
 set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 local cuc = false
-set('n', '<C-c>', function()
+set('n', '<C-C>', function()
   if cuc == false then
     cuc = true
     -- Perform actions when toggle is turned on
