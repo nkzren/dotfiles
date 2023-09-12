@@ -75,10 +75,9 @@ setopt HIST_SAVE_NO_DUPS
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm z vi-mode kube-ps1 zshrc.d autojump)
+plugins=(git z vi-mode kube-ps1 zshrc.d autojump asdf)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # TMUX
 # Attaches tmux to the last session; creates a new session if none exists.
@@ -89,9 +88,6 @@ function start_tmux() {
 }
 
 start_tmux
-
-# nvm
-[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/renan/.sdkman"
