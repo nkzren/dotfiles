@@ -235,6 +235,7 @@ bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
 for_window [class="(?i)xpad"] floating enable border pixel 1 resize set 250 250
+for_window [class="(?i)flameshot"] floating enable border pixel 1 resize set 448 720
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
 for_window [class="(?i)solaar"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
@@ -427,7 +428,7 @@ bar {
 	#i3bar_command i3bar
 	#status_command i3status | ~/.i3/i3-keyboard-layout i3status
     status_command SCRIPT_DIR=~/.config/i3blocks i3blocks | ~/.i3/i3-keyboard-layout i3status
-	position top
+	position bottom
 
 	bindsym button4 nop
 	bindsym button5 nop
