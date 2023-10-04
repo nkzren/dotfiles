@@ -23,15 +23,17 @@ sudo snap install spotify discord
 # Arch packages
 yay -S --noconfirm \
     tldr man-db bat sysstat ncdu ntfs-3g acpi udevil \
-    zsh vim neovim kitty tmux byobu ripgrep ranger \
+    zsh vim neovim kitty tmux byobu ripgrep ranger unzip \
     xclip feh jq curl fd net-tools flameshot \
     pipewire pipewire-pulse playerctl \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
     nerd-fonts-hack ttf-fira-code ttf-nerd-fonts-symbols-2048-em-mono
 {{- if .gui }}
 
-yay -S --noconfirm i3-wm i3blocks i3status i3lock-color network-manager-applet brightnessctl \
-    feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc discord spotify
+yay -S --noconfirm i3-wm i3blocks i3status i3lock-color \
+    network-manager-applet brightnessctl dunst \
+    feh pcmanfm rofi picom lxappearance autorandr pavucontrol \
+    firefox vlc discord spotify
 {{- end -}}
 {{- end }}
 
