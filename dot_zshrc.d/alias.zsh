@@ -1,5 +1,5 @@
 alias zshrc="c edit ~/.zshrc || vim ~/.zshrc"
-alias ftconfig="c edit ~/.config/nvim/lua/ftconfig.lua || vim ~/.zshrc"
+alias ftconfig="c edit ~/.config/nvim/filetype.lua || vim ~/.config/nvim/filetype.lua"
 
 # Docker
 alias d=docker

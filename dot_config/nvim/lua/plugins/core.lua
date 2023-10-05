@@ -4,13 +4,6 @@ return {
   'tpope/vim-commentary',
 
   { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" },
-  {
-    'nathom/filetype.nvim',
-    config = function()
-      local ftconfig = require('ftconfig')
-      require('filetype').setup(ftconfig)
-    end
-  },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },

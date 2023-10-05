@@ -20,6 +20,7 @@ local servers = {
   marksman = {},
   pylsp = {},
 
+  tflint = {},
   terraformls = {},
   yamlls = {},
   helm_ls = {},
