@@ -8,6 +8,7 @@ require('lazy').setup({
   { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
   { 'wuelnerdotexe/vim-astro', ft = 'astro' },
   { 'towolf/vim-helm', ft = 'helm' },
-  { 'hashivim/vim-terraform', ft = { 'tf', 'hcl' } }
+  { 'hashivim/vim-terraform', ft = { 'terraform', 'terraform-vars', 'hcl' } },
+  { 'fatih/vim-go', ft = 'go' },
 }, {})
 
