@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/renan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=gruvbox
 SOLARIZED_THEME=dark
 
@@ -90,9 +90,9 @@ function start_tmux() {
 start_tmux
 
 # fnm
-export PATH="/home/renan/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/renan/.sdkman"
-[[ -s "/home/renan/.sdkman/bin/sdkman-init.sh" ]] && source "/home/renan/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

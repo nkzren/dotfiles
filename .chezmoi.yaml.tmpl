@@ -1,5 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $hasGUI := promptBoolOnce . "hasGUI" "Does this machine have a GUI?" -}}
+{{- $workProfile := promptBoolOnce . "workProfile" "Work profile?" -}}
 {{- $screen_primary := promptStringOnce . "screen_primary" "Primary screen name (check with xrandr --listmonitors)" -}}
 {{- $screen_secondary := promptStringOnce . "screen_secondary" "Secondary screen name" -}}
 {{- $screen_tertiary := promptStringOnce . "screen_tertiary" "Tertiary screen name" -}}
@@ -7,6 +8,7 @@
 data:
   email: {{ $email | quote }}
   gui: {{ $hasGUI }}
+  workProfile: {{ $workProfile }}
   screens: 
     primary: {{ $screen_primary }}
     {{- if $screen_secondary }}
