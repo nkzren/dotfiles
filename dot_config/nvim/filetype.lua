@@ -1,3 +1,7 @@
+local templatePattern = function (path, bufnr, ext)
+  return ext
+end
+
 vim.filetype.add({
   filename = {
     [".git/config"] = "gitconfig",
@@ -6,11 +10,11 @@ vim.filetype.add({
     [".*i3/config.*"] = "i3config",
     [".*Jenkinsfile.*"] = "groovy",
     [".*zshrc.*"] = "zsh",
-    [".*%.properties%.sample"] = "jproperties",
     [".*nginx.*conf.*"] = "nginx",
-    [".*%.(%a+)%.(sample|template|tmpl)"] = function (path, bufnr, ext)
-      return ext
-    end,
+    [".*%.properties%.sample"] = "jproperties",
+    [".*%.(%a+)%.sample"] = templatePattern,
+    [".*%.(%a+)%.template"] = templatePattern,
+    [".*%.(%a+)%.tmpl"] = templatePattern,
   }
 })
 
