@@ -8,6 +8,6 @@ require('lazy').setup({
   { 'iamcco/markdown-preview.nvim', ft = 'markdown' },
   { 'wuelnerdotexe/vim-astro', ft = 'astro' },
   { 'towolf/vim-helm', ft = 'helm' },
-  { 'fatih/vim-go', ft = 'go' },
+  { 'nkzren/vim-go', ft = 'go' },
 }, {})
 

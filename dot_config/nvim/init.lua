@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.go_disable_gohtmltmpl = 1
+
 local o = vim.opt
 
 o.rnu=true
