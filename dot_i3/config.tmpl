@@ -6,7 +6,7 @@ set $mod Mod4
 
 set $monitor_primary {{ .screens.primary }}
 set $monitor_secondary {{ .screens.secondary }}
-{{ if eq .chezmoi.hostname "renan-elo7" -}}
+{{ if index .screens "tertiary" -}}
 set $monitor_vertical {{ .screens.tertiary }}
 {{- end }}
 
@@ -18,9 +18,9 @@ workspace 5 output $monitor_primary
 workspace 6 output $monitor_secondary
 workspace 7 output $monitor_secondary
 workspace 8 output $monitor_secondary
-{{ if eq .chezmoi.hostname "renan-elo7" -}}
-workspace 9 output $monitor_secondary
-workspace 0 output $monitor_secondary
+{{ if index .screens "tertiary" -}}
+workspace 9 output $monitor_vertical
+workspace 0 output $monitor_vertical
 {{- else -}}
 workspace 9 output $monitor_secondary
 workspace 0 output $monitor_secondary
@@ -91,7 +91,7 @@ for_window [class="Spotify"] move to workspace $ws8
 
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific workspaces
-{{ else if eq .chezmoi.hostname "renan-elo7" -}}
+{{ else if .workProfile -}}
 # Elo7 specific workspaces
 assign [class="(?i)google-chrome"] $ws3
 assign [class="(?i)slack"] $ws0
@@ -153,7 +153,7 @@ bindsym $mod+Ctrl+n --release exec "xpad"
 # My PC specific
 bindsym $mod+E exec pcmanfm
 bindsym $mod+Shift+P exec okular ~/Documents/Books/LearningGo.pdf
-{{ else if eq .chezmoi.hostname "renan-elo7" -}}
+{{ else if .workProfile -}}
 # Elo7 specific
 bindsym $mod+E exec nautilus
 {{- end }}
@@ -352,7 +352,7 @@ exec_always --no-startup-id $HOME/.fehbg
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
 exec --no-startup-id xrandr --output $monitor_right --primary
-{{ else if eq .chezmoi.hostname "renan-elo7" -}}
+{{ else if .workProfile -}}
 # Elo7 specific
 exec --no-startup-id xrandr --output $monitor_left --primary
 exec --no-startup-id slack
@@ -521,7 +521,7 @@ bindsym --release Shift+$mod+P exec autorandr dual
 {{- if eq .chezmoi.hostname "renan" }}
 bindsym --release Shift+$mod+bracketleft exec autorandr left-only
 bindsym --release Shift+$mod+bracketright exec autorandr right-only
-{{- else if eq .chezmoi.hostname "renan-elo7" }}
+{{- else if .workProfile }}
 bindsym --release Shift+$mod+bracketleft exec autorandr note-only
 {{ end }}
 
