@@ -1,5 +1,5 @@
 export PATH=$PATH:$HOME/.local/bin
-{{- if  .workProfile }}
+{{ if  .workProfile -}}
 export BROWSER=/usr/bin/google-chrome
 {{- else -}}
 export BROWSER=/usr/bin/firefox

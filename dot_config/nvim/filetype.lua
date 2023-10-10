@@ -10,6 +10,7 @@ vim.filetype.add({
     [".*i3/config.*"] = "i3config",
     [".*Jenkinsfile.*"] = "groovy",
     [".*zshrc.*"] = "zsh",
+    [".*zprofile.*"] = "zsh",
     [".*nginx.*conf.*"] = "nginx",
     [".*%.properties%.sample"] = "jproperties",
     [".*%.(%a+)%.sample"] = templatePattern,
