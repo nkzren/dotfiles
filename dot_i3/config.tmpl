@@ -146,7 +146,7 @@ bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+; notify-send --expire-tim
 bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send --expire-time=500 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec kitty btop
 bindsym $mod+B exec firefox
 bindsym $mod+O exec obsidian
 bindsym $mod+Ctrl+n --release exec "xpad"
@@ -237,6 +237,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
+for_window [title="(?i)btop"] floating enable border pixel 1 resize set 1280 720
 for_window [class="(?i)xpad"] floating enable border pixel 1 resize set 250 250
 for_window [class="(?i)flameshot"] floating enable border pixel 1 resize set 448 720
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
