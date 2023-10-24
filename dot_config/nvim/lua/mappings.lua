@@ -4,19 +4,28 @@ local opts = { noremap=true, silent=true }
 
 map('n', '<M-1>',':tabprevious<CR>' , opts)
 map('n', '<M-2>',':tabnext<CR>' , opts)
-map('', '<leader>j', ':bn<CR>', opts)
-map('', '<leader>k', ':bp<CR>', opts)
+map('', '<S-l>', ':bn<CR>', opts)
+map('', '<S-h>', ':bp<CR>', opts)
 
 map('n', '<M-j>', '<C-W>j', opts)
 map('n', '<M-k>', '<C-W>k', opts)
 map('n', '<M-h>', '<C-W>h', opts)
 map('n', '<M-l>', '<C-W>l', opts)
 
-map("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize +5<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize -5<cr>", { desc = "Increase window width" })
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "Increase window width" })
 
+-- Move lines
+map("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Clipboard
 map('n', '<leader>y', '"+y', { noremap = true })
 map('n', '<leader>Y', '"+yy', { noremap = true })
 map('v', '<leader>y', '"+y', { noremap = true })
@@ -47,6 +56,7 @@ set('n', '<leader>ga', ':G add ')
 set('n', '<leader>gA', ':G add .<CR>')
 set('n', '<leader>gd', ':G difftool<CR>')
 set('n', '<leader>gc', ':G commit')
+set('n', '<leader>gC', ':G commit<CR>i')
 set('n', '<leader>gp', ':G push')
 set('n', '<leader>gP', ':G push --force-with-lease')
 set('n', '<leader>gl', ':G pull')
