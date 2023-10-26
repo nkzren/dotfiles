@@ -4,7 +4,7 @@ alias i3config="c edit ~/.i3/config || vim ~/.i3/config"
 
 # Docker
 alias d=docker
-alias dc=docker-compose
+alias dc='docker compose'
 
 # Kubernetes related aliases
 alias k=kubectl 
