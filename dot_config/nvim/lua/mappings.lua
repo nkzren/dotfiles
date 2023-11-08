@@ -47,8 +47,9 @@ local builtin = require('telescope.builtin')
 
 set('n', '<leader>fd', builtin.find_files, { noremap = true })
 set('n', '<leader>rg', builtin.live_grep, {})
-set('n', '<leader><space>', builtin.buffers, {})
-set('n', '<leader>h', builtin.help_tags, {})
+set('n', '<M-0>', builtin.buffers, {})
+set('n', '<C-H>', builtin.help_tags, {})
+set('n', '<M-q>', ':ccl<CR>', opts)
 
 -- Git
 set('n', '<leader>gs', ':G status<CR>')
@@ -59,7 +60,7 @@ set('n', '<leader>gc', ':G commit')
 set('n', '<leader>gC', ':G commit<CR>i')
 set('n', '<leader>gp', ':G push')
 set('n', '<leader>gP', ':G push --force-with-lease')
-set('n', '<leader>gl', ':G pull')
+set('n', '<leader>gl', ':G pull<CR>')
 
 -- NERDTree
 map('n', '<C-a>',':NERDTreeToggle<CR>' , opts)
