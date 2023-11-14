@@ -79,7 +79,7 @@ workspace_layout tabbed
 
 # Open applications on specific workspaces
 assign [class="(?i)Firefox"] $ws2
-assign [class="(?i)Discord"] $ws0
+assign [class="(?i)rambox"] $ws0
 for_window [class="Spotify"] move to workspace $ws8
 
 {{ if eq .chezmoi.hostname "renan" -}}
@@ -88,7 +88,6 @@ for_window [class="Spotify"] move to workspace $ws8
 # Elo7 specific workspaces
 assign [class="(?i)google-chrome"] $ws3
 assign [class="(?i)slack"] $ws0
-assign [class="(?i)rambox"] $ws0
 {{ end -}}
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
@@ -434,7 +433,7 @@ bar {
 	bindsym button5 nop
 	strip_workspace_numbers yes
 
-	font pango:Fira Code:style=Regular 12
+	font pango:Fira Code:style=Light 14
 
     colors {
         background $bg
@@ -514,14 +513,18 @@ mode "$mode_gaps_outer" {
 bindsym --release Print exec flameshot full -c
 bindsym --release Ctrl+Print exec flameshot gui -p ~/Pictures/Screenshots/Flameshot
 
-# TODO: Custom config by setup?
-bindsym --release Shift+$mod+P exec autorandr dual
-{{- if eq .chezmoi.hostname "renan" }}
-bindsym --release Shift+$mod+bracketleft exec autorandr left-only
-bindsym --release Shift+$mod+bracketright exec autorandr right-only
-{{- else if .workProfile }}
-bindsym --release Shift+$mod+bracketleft exec autorandr note-only
-{{ end }}
+set $mode_monitors Monitors: (s) single, (d) dual, (t) triple, (1) first, (2) second, (3) third
+bindsym $mod+Shift+m mode "$mode_monitors"
+
+mode "$mode_monitors" {
+        bindsym s      exec autorandr single
+        bindsym d      exec autorandr dual
+        bindsym t      exec autorandr triple
+        bindsym 2      exec autorandr second
+        bindsym 3      exec autorandr third
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
