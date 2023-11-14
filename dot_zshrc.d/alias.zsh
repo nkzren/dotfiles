@@ -8,6 +8,13 @@ alias d=docker
 alias dc='docker compose'
 alias drmti='docker run --rm -ti'
 
+# cd recursion
+alias u="cd ../"
+alias uu="cd ../../"
+alias uuu="cd ../../../"
+alias uuuu="cd ../../../../"
+alias uuuuu="cd ../../../../../"
+
 # Kubernetes related aliases
 alias k=kubectl 
 alias kn='kubectl config set-context --current --namespace '
@@ -49,6 +56,8 @@ fi
 
 alias kbd='~/.i3/i3-keyboard-layout'
 
+alias gcnoci='git commit -t ~/.git/templates/skip-ci'
 alias fizmerda='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 
 alias notes='cd ~/tenjin'
+
