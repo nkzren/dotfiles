@@ -4,6 +4,7 @@ return {
   'tpope/vim-commentary',
 
   { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" },
+  { "Einenlum/yaml-revealer", ft = {"yaml", "helm"} },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
