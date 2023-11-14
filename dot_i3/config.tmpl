@@ -231,8 +231,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
-for_window [title="(?i)btop"] floating enable border pixel 1 resize set 1280 720
-for_window [title="(?i)Bitwarden.*Mozilla Firefox"] floating enable border pixel 1 resize set 500 800
+for_window [title="(?i)btop" class="kitty"] floating enable border pixel 1 resize set 1280 720
 for_window [class="(?i)xpad"] floating enable border pixel 1 resize set 250 250
 for_window [class="(?i)flameshot"] floating enable border pixel 1 resize set 448 720
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
