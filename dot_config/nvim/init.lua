@@ -5,17 +5,17 @@ vim.g.go_disable_gohtmltmpl = 1
 
 local o = vim.opt
 
+o.listchars = { trail = '␣', tab = '>-', eol = '↵' }
+
 o.rnu=true
 o.nu=true
 o.mouse='a'
 
 o.tabstop=4
 o.shiftwidth=4
--- o.colorcolumn="81"
 
 o.ignorecase=true
 o.smartcase=true
--- require('configs-lsp')
 
 -- Lazy Setup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

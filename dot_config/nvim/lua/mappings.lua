@@ -77,16 +77,12 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   command = "setlocal commentstring=#\\ %s",
 })
 
-local cuc = false
 set('n', '<C-C>', function()
-  if cuc == false then
-    cuc = true
-    -- Perform actions when toggle is turned on
-    vim.cmd("set cuc")
-  else
-    cuc = false
-    -- Perform actions when toggle is turned off
-    vim.cmd("set cuc!")
-  end
+  vim.cmd("set cuc!")
+end
+)
+
+set('n', '<leader>w', function()
+  vim.cmd("set list!")
 end
 )
