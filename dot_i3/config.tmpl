@@ -4,27 +4,20 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $monitor_primary {{ .screens.primary }}
-set $monitor_secondary {{ .screens.secondary }}
-{{ if index .screens "tertiary" -}}
-set $monitor_vertical {{ .screens.tertiary }}
-{{- end }}
+set $monitor_first {{ .screens.first }}
+set $monitor_second {{ .screens.second }}
+set $monitor_third {{ .screens.third }}
 
-workspace 1 output $monitor_primary
-workspace 2 output $monitor_primary
-workspace 3 output $monitor_primary
-workspace 4 output $monitor_primary
-workspace 5 output $monitor_primary
-workspace 6 output $monitor_secondary
-workspace 7 output $monitor_secondary
-workspace 8 output $monitor_secondary
-{{ if index .screens "tertiary" -}}
-workspace 9 output $monitor_vertical
-workspace 0 output $monitor_vertical
-{{- else -}}
-workspace 9 output $monitor_secondary
-workspace 0 output $monitor_secondary
-{{- end }}
+workspace 1 output $monitor_first
+workspace 2 output $monitor_first
+workspace 3 output $monitor_first
+workspace 4 output $monitor_first
+workspace 5 output $monitor_first
+workspace 6 output $monitor_second
+workspace 7 output $monitor_second
+workspace 8 output $monitor_second
+workspace 9 output $monitor_third
+workspace 0 output $monitor_third
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
