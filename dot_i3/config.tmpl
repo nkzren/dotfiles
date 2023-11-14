@@ -95,6 +95,7 @@ for_window [class="Spotify"] move to workspace $ws8
 # Elo7 specific workspaces
 assign [class="(?i)google-chrome"] $ws3
 assign [class="(?i)slack"] $ws0
+assign [class="(?i)rambox"] $ws0
 {{ end -}}
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
@@ -360,7 +361,7 @@ exec --no-startup-id xrandr --output $monitor_right --primary
 {{ else if .workProfile -}}
 # Elo7 specific
 exec --no-startup-id xrandr --output $monitor_left --primary
-exec --no-startup-id slack
+exec --no-startup-id rambox
 exec --no-startup-id google-chrome
 {{- end }}
 
