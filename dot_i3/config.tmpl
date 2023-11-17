@@ -8,6 +8,8 @@ set $monitor_first {{ .screens.first }}
 set $monitor_second {{ .screens.second }}
 set $monitor_third {{ .screens.third }}
 
+exec --no-startup-id xrandr --output $monitor_first --primary
+
 workspace 1 output $monitor_first
 workspace 2 output $monitor_first
 workspace 3 output $monitor_first
@@ -82,12 +84,11 @@ assign [class="(?i)Firefox"] $ws2
 assign [class="(?i)rambox"] $ws0
 for_window [class="Spotify"] move to workspace $ws8
 
-{{ if eq .chezmoi.hostname "renan" -}}
-# My PC specific workspaces
-{{ else if .workProfile -}}
+{{ if .workProfile -}}
 # Elo7 specific workspaces
 assign [class="(?i)google-chrome"] $ws3
-assign [class="(?i)slack"] $ws0
+{{ else -}}
+# My PC specific workspaces
 {{ end -}}
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
@@ -150,11 +151,11 @@ bindsym $mod+Shift+P exec okular ~/Documents/Books/LearningGo.pdf
 {{ else if .workProfile -}}
 # Elo7 specific
 bindsym $mod+E exec nautilus
+bindsym $mod+F6 exec google-chrome
 {{- end }}
 bindsym $mod+F4 exec discord
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec spotify
-bindsym $mod+F6 exec google-chrome
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -324,6 +325,15 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+bindsym $mod+shift+greater mode "$mode_dotfiles"
+set $mode_dotfiles Update dotfiles? This will overwrite modifications (y/n)
+mode "$mode_dotfiles" {
+    bindsym y exec "chezmoi apply --force; notify-send 'Dotfiles updated'", mode "default"
+    bindsym n mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # Lock screen
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff --date-color=ffffff --pass-volume-keys
 
@@ -348,10 +358,8 @@ exec_always --no-startup-id $HOME/.fehbg
 
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
-exec --no-startup-id xrandr --output $monitor_right --primary
 {{ else if .workProfile -}}
 # Elo7 specific
-exec --no-startup-id xrandr --output $monitor_left --primary
 exec --no-startup-id rambox
 exec --no-startup-id google-chrome
 {{- end }}

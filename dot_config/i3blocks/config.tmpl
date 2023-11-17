@@ -79,19 +79,19 @@ interval=5
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=home ⛁ 
+label=⛁ /home
 interval=10
 separator=false
 
 [disk]
-label=root ⛁ 
+label=⛁ /
 DIR=/
 interval=10
 separator=false
 
-{{ if eq .chezmoi.hostname "renan" }}
+{{ if not .workProfile }}
 [disk]
-label=data ⛁ 
+label=⛁ /data
 DIR=/mnt/Data
 interval=10
 {{ end }}

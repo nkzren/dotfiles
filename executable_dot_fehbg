@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale "$HOME/.wallpapers/primary.jpg" "$HOME/.wallpapers/secondary.jpg" "$HOME/.wallpapers/vertical.jpg"
+feh --no-fehbg --bg-scale "$HOME/.wallpapers/first.jpg" "$HOME/.wallpapers/second.jpg" "$HOME/.wallpapers/third.jpg"
