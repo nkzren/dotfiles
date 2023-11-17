@@ -5,8 +5,7 @@ vim.g.go_disable_gohtmltmpl = 1
 
 local o = vim.opt
 
-o.listchars = { trail = '␣', tab = '>-', eol = '↵' }
-
+o.listchars = { trail = '␣', tab = '|-', eol = '↵', extends = '>', precedes = '<'  }
 o.rnu=true
 o.nu=true
 o.mouse='a'

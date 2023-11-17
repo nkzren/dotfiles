@@ -15,6 +15,7 @@ vim.filetype.add({
     [".*%.properties%.sample"] = "jproperties",
     [".*%.(%a+)%.sample"] = templatePattern,
     [".*%.(%a+)%.template"] = templatePattern,
+    [".*%.(%a+)%.tpl"] = templatePattern,
     [".*%.(%a+)%.tmpl"] = templatePattern,
   }
 })
