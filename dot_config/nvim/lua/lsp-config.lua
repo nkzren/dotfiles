@@ -18,7 +18,15 @@ local servers = {
   svelte = {},
 
   marksman = {},
-  pylsp = {},
+  pylsp = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'E501', 'W503'}
+        }
+      }
+    }
+  },
 
   tflint = {},
   terraformls = {},
