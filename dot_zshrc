@@ -79,6 +79,9 @@ plugins=(git z vi-mode kube-ps1 zshrc.d autojump asdf)
 
 source $ZSH/oh-my-zsh.sh
 
+complete -F __start_kubectl k
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 # TMUX
 # Attaches tmux to the last session; creates a new session if none exists.
 function start_tmux() {
