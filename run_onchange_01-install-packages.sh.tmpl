@@ -3,19 +3,21 @@
 # Ubuntu packages
 sudo apt install -y \
     tldr man-db bat sysstat ncdu ntfs-3g acpi udevil brightnessctl \
-    zsh vim kitty tmux byobu ripgrep ranger \
+    zsh vim kitty byobu ripgrep ranger \
     xclip feh jq curl jq net-tools \
     pipewire pipewire-pulse playerctl \
     fonts-firacode fonts-hack fd-find
 
-sudo snap install --classic nvim
+sudo snap install --classic nvim tmux
 {{- if .gui }}
 
 sudo apt install -y i3 i3status \
     feh pcmanfm rofi picom lxappearance autorandr pavucontrol firefox vlc \
     flameshot
 
-sudo snap install spotify discord rambox
+sudo snap install spotify
+sudo snap install discord
+sudo snap install rambox
 
 {{- end -}}
 {{- end -}}
