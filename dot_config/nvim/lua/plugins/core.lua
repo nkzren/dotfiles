@@ -10,6 +10,18 @@ return {
   { 'folke/which-key.nvim', opts = {} },
 
   {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
+
+  'RRethy/vim-illuminate',
+
+  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {

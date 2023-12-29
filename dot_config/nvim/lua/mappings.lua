@@ -72,6 +72,8 @@ set('n', '<leader>n', vim.diagnostic.goto_prev, opts)
 set('n', '<leader>N', vim.diagnostic.goto_next, opts)
 set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
+set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*.tf"},
   command = "setlocal commentstring=#\\ %s",
