@@ -87,6 +87,7 @@ for_window [class="(?i)Spotify"] move to workspace $ws7
 {{ if .workProfile -}}
 # Elo7 specific workspaces
 assign [class="(?i)google-chrome"] $ws3
+assign [class="(?i)slack"] $ws9
 {{ else -}}
 # My PC specific workspaces
 {{ end -}}
@@ -361,6 +362,7 @@ exec_always --no-startup-id $HOME/.fehbg
 {{ else if .workProfile -}}
 # Elo7 specific
 exec --no-startup-id rambox
+exec --no-startup-id slack
 exec --no-startup-id google-chrome
 {{- end }}
 
