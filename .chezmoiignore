@@ -9,3 +9,5 @@ old/
 
 dot_fehbg/*.png
 dot_fehbg/*.jpg
+
+dot_config/nvim/lazy-lock.json
