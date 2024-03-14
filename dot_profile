@@ -8,3 +8,4 @@ export PATH=$PATH:/usr/local/go/bin
 
 xset r rate 250 60 
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+. "$HOME/.cargo/env"
