@@ -1,9 +1,5 @@
 export PATH=$PATH:$HOME/.local/bin
-{{ if  .workProfile -}}
-export BROWSER=/usr/bin/google-chrome
-{{- else -}}
 export BROWSER=/usr/bin/firefox
-{{- end }}
 export EDITOR=/usr/bin/nvim
 export PATH=$PATH:/usr/local/go/bin
 

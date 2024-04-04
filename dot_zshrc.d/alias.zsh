@@ -61,4 +61,4 @@ alias gcnoci='git commit -t ~/.git/templates/skip-ci'
 alias fizmerda='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 
 alias notes='cd ~/tenjin'
-
+alias jch='cd "$(autojump charts $1)"'

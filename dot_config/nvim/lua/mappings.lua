@@ -68,8 +68,8 @@ map('n', '<leader>T',':NERDTreeFind<CR>' , opts)
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 set('n', '<leader>e', vim.diagnostic.open_float, opts)
-set('n', '<leader>n', vim.diagnostic.goto_prev, opts)
-set('n', '<leader>N', vim.diagnostic.goto_next, opts)
+set('n', '<leader>N', vim.diagnostic.goto_prev, opts)
+set('n', '<leader>n', vim.diagnostic.goto_next, opts)
 set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 set("n", "<leader>a", "<cmd>AerialToggle!<CR>")

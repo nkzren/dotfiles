@@ -336,7 +336,11 @@ mode "$mode_dotfiles" {
 }
 
 # Lock screen
+{{ if .workProfile -}}
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock
+{{ else }}
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock -B sigma -k --time-color=ffffff --date-color=ffffff --pass-volume-keys
+{{- end }}
 
 # Autostart applications
 # exec --no-startup-id firefox
@@ -364,6 +368,7 @@ exec_always --no-startup-id $HOME/.fehbg
 exec --no-startup-id rambox
 exec --no-startup-id slack
 exec --no-startup-id google-chrome
+exec --no-startup-id firefox
 exec --no-startup-id /opt/zscaler/bin/ZSTray
 {{- end }}
 
