@@ -3,12 +3,15 @@
 # Ubuntu packages
 sudo apt install -y \
     tldr man-db bat sysstat ncdu ntfs-3g acpi udevil brightnessctl \
-    zsh vim kitty byobu ripgrep ranger \
+    zsh vim byobu ripgrep ranger \
     xclip feh jq curl jq net-tools \
     pipewire pipewire-pulse playerctl \
     fonts-firacode fonts-hack fd-find
 
 sudo snap install --classic nvim tmux
+
+# Alacritty deps
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 {{- if .gui }}
 
 sudo apt install -y i3 i3status \
@@ -24,16 +27,19 @@ sudo snap install rambox
 
 {{- if eq .chezmoi.osRelease.id "arch" -}}
 # Arch packages
-yay -S --noconfirm \
+yay -S --noconfirm --needed \
     tldr man-db bat sysstat ncdu ntfs-3g acpi udevil btop \
-    zsh vim neovim kitty tmux byobu ripgrep ranger unzip \
+    zsh vim neovim tmux byobu ripgrep ranger unzip \
     xclip feh jq curl fd net-tools flameshot \
     pipewire pipewire-pulse playerctl \
     noto-fonts-cjk noto-fonts-emoji ntfsfixboot \
     nerd-fonts-hack ttf-fira-code ttf-nerd-fonts-symbols-2048-em-mono
+
+# Alacritty deps
+yay -S --noconfirm --needed cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python
 {{- if .gui }}
 
-yay -S --noconfirm i3-wm i3blocks i3status i3lock-color \
+yay -S --noconfirm --needed i3-wm i3blocks i3status i3lock-color \
     network-manager-applet brightnessctl dunst \
     feh pcmanfm rofi picom lxappearance autorandr pavucontrol \
     firefox vlc discord spotify
@@ -44,10 +50,12 @@ yay -S --noconfirm i3-wm i3blocks i3status i3lock-color \
 # Fedora packages
 sudo dnf install -y \
 	tldr man-db bat sysstat ncdu ntfs-3g acpi brightnessctl \
-	zsh vim neovim kitty tmux byobu fd-find ripgrep ranger sqlite \
+	zsh vim neovim tmux byobu fd-find ripgrep ranger sqlite \
 	xclip feh jq curl net-tools flameshot \
 	fira-code-fonts google-noto-cjk-fonts hack-fonts powerline-fonts \
 	pipewire playerctl
 
+# Alacritty deps
+sudo dnf install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel g++
 {{- end }}
 
