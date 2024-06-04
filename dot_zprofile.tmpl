@@ -4,9 +4,9 @@ export EDITOR=/usr/bin/nvim
 export PATH=$PATH:/usr/local/go/bin
 
 
-if [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
+if [[ "$(xrandr --listmonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
     autorandr dual
-elif [[ "$(xrandr --listactivemonitors | grep Monitors | awk '{ print $2 }')" == 3 ]]; then
+elif [[ "$(xrandr --listmonitors | grep Monitors | awk '{ print $2 }')" == 3 ]]; then
     autorandr triple
 fi
 xset r rate 300 60
