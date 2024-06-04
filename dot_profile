@@ -6,6 +6,13 @@ export BROWSER=/usr/bin/firefox
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 
-xset r rate 250 60 
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 . "$HOME/.cargo/env"
+
+xset r rate 300 60
+if [[ "$(xrandr --listmonitors | grep Monitors | awk '{ print $2 }')" == 2 ]]; then
+    autorandr dual
+elif [[ "$(xrandr --listmonitors | grep Monitors | awk '{ print $2 }')" == 3 ]]; then
+    autorandr triple
+fi
+
+_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
