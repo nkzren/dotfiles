@@ -85,9 +85,9 @@ assign [class="(?i)rambox"] $ws0
 for_window [class="(?i)Spotify"] move to workspace $ws7
 
 {{ if .workProfile -}}
-# Elo7 specific workspaces
-assign [class="(?i)google-chrome"] $ws3
+# Work specific workspaces
 assign [class="(?i)slack"] $ws9
+assign [class="(?i)google-chrome"] $ws3
 {{ else -}}
 # My PC specific workspaces
 {{ end -}}
@@ -150,8 +150,7 @@ bindsym $mod+Ctrl+n --release exec "xpad"
 bindsym $mod+E exec pcmanfm
 bindsym $mod+Shift+P exec okular ~/Documents/Books/LearningGo.pdf
 {{ else if .workProfile -}}
-# Elo7 specific
-bindsym $mod+E exec nautilus
+# work specific
 bindsym $mod+F6 exec google-chrome
 {{- end }}
 bindsym $mod+F4 exec discord
@@ -352,6 +351,8 @@ exec --no-startup-id flameshot
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id spotify
 exec --no-startup-id solaar -w hide
+exec --no-startup-id firefox
+exec --no-startup-id rambox
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
@@ -364,12 +365,9 @@ exec_always --no-startup-id $HOME/.fehbg
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
 {{ else if .workProfile -}}
-# Elo7 specific
-exec --no-startup-id rambox
+# Work specific
 exec --no-startup-id slack
 exec --no-startup-id google-chrome
-exec --no-startup-id firefox
-exec --no-startup-id /opt/zscaler/bin/ZSTray
 {{- end }}
 
 # Color palette used for the terminal ( ~/.Xresources file )
