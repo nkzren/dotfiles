@@ -10,7 +10,6 @@ local servers = {
     }
   },
 
-  astro = {},
   eslint = {},
   tsserver = {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "astro", "svelte" }
