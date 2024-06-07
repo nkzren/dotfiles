@@ -63,3 +63,5 @@ alias fizmerda='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 alias notes='cd ~/tenjin'
 alias jch='cd "$(autojump charts $1)"'
 alias nvimdiff='nvim -d'
+
+alias vpn='~/.scripts/vpn.sh'
