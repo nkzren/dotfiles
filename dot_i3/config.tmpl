@@ -362,6 +362,9 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.fehbg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Disable ibus
+exec --no-startup-id ibus exit
+
 {{ if eq .chezmoi.hostname "renan" -}}
 # My PC specific
 {{ else if .workProfile -}}
