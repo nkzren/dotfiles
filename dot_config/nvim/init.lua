@@ -31,7 +31,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Imports
-require('plugins')
+if not vim.g.vscode then
+  require('plugins')
+  require('lsp-config')
+  require('cmp-config')
+end
 require('mappings')
-require('lsp-config')
-require('cmp-config')

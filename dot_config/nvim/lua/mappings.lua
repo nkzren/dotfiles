@@ -42,15 +42,6 @@ map('n', '<C-u>', ':call comfortable_motion#flick(-100)<CR>', opts)
 map('n', '<C-_>', 'gcc', {})
 map('v', '<C-_>', 'gc', {})
 
--- Telescope
-local builtin = require('telescope.builtin')
-
-set('n', '<leader>fd', builtin.find_files, { noremap = true })
-set('n', '<leader>rg', builtin.live_grep, {})
-set('n', '<M-0>', builtin.buffers, {})
-set('n', '<C-H>', builtin.help_tags, {})
-set('n', '<M-q>', ':ccl<CR>', opts)
-
 -- Git
 set('n', '<leader>gs', ':G status<CR>')
 set('n', '<leader>ga', ':G add ')
