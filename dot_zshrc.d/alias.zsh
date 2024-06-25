@@ -22,9 +22,11 @@ alias kn='kubectl config set-context --current --namespace '
 alias kx='kubectl config use-context '
 alias kcgc='kubectl config get-contexts'
 
-# TF-related
+# iac-related
 alias tf=terraform
 alias tg=terragrunt
+
+alias p=pulumi 
 
 if [ ! -z $(command -v nvim) ] && [ ! -z $(command -v kubectl) ]; then
     export KUBE_EDITOR='nvim'
@@ -56,12 +58,14 @@ else
 fi
 
 alias kbd='~/.i3/i3-keyboard-layout'
+alias fd='fdfind'
+alias bat='batcat'
 
 alias gcnoci='git commit -t ~/.git/templates/skip-ci'
 alias fizmerda='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
+alias cdclip='cd $(clippaste)'
 
 alias notes='cd ~/tenjin'
-alias jch='cd "$(autojump charts $1)"'
 alias nvimdiff='nvim -d'
 
 alias vpn='~/.scripts/vpn.sh'

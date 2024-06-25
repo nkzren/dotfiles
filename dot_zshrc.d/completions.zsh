@@ -6,3 +6,4 @@ complete -F __start_kubectl k
 [[ $commands[bw] ]] && eval "$(bw completion --shell zsh); compdef _bw bw;"
 [[ $commands[fnm] ]] && source <(fnm completions)
 [[ $commands[golangci-lint] ]] && source <(golangci-lint completion zsh)
+[[ $commands[pulumi] ]] && source <(pulumi gen-completion zsh)
