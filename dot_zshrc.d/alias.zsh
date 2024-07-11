@@ -57,7 +57,6 @@ else
   export EDITOR='nvim'
 fi
 
-alias kbd='~/.i3/i3-keyboard-layout'
 alias fd='fdfind'
 alias bat='batcat'
 
