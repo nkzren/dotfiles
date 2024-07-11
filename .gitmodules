@@ -1,8 +1,0 @@
-[submodule "dotbot"]
-	path = meta/dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
-[submodule "dotbot-yay"]
-	path = plugins/yay
-	url = git@github.com:OxSon/dotbot-yay.git
-    ignore = dirty
