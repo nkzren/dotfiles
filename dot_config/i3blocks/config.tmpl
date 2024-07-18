@@ -131,26 +131,14 @@ label=⚡
 interval=30
 {{ end }}
 
-[rofi-calendar]
-interval=600
-separator=false
-BAR_POSITION=bottom
-#WEEK_START=monday
-#DATEFTM=+%a %d %b %Y
-SHORTFMT=+%d/%m/%Y
-#LABEL=
-#FONT=Monospace 10
-LEFTCLICK_PREV_MONTH=true
-PREV_MONTH_TEXT=« previous «
-NEXT_MONTH_TEXT=» next »
-ROFI_CONFIG_FILE=~/.config/rofi/config.rasi
-
-# Date Time
-#
-[time]
-#command=date '+%Y-%m-%d %H:%M:%S'
-command=date '+%H:%M:%S'
+[calendar]
+# command=$SCRIPT_DIR/calendar
 interval=1
+LABEL=
+DATEFMT=+%d/%m/%y %H:%M:%S
+# SHORTFMT=+%H:%M:%S
+HEIGHT=180
+WIDTH=220
 
 
 # Generic media player support

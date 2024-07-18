@@ -142,7 +142,7 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send --expire-t
 
 # Start Applications
 bindsym $mod+Ctrl+b exec kitty -1 btop
-bindsym $mod+C exec kitty -1 khal calendar
+bindsym $mod+C exec kitty -1 khal interactive
 bindsym $mod+B exec firefox
 bindsym $mod+O exec obsidian
 bindsym $mod+Ctrl+n --release exec "xpad"
@@ -234,7 +234,6 @@ bindsym $mod+minus scratchpad show
 
 # Open specific applications in floating mode
 for_window [title="(?i)btop" class="kitty"] floating enable border pixel 1 resize set 1280 720
-for_window [title="(?i)khal" class="kitty"] floating enable border pixel 1 resize set 640 480
 for_window [class="(?i)xpad"] floating enable border pixel 1 resize set 250 250
 for_window [class="(?i)flameshot"] floating enable border pixel 1 resize set 448 720
 for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 596
@@ -272,7 +271,9 @@ for_window [class="Yad"] floating enable
 for_window [class="(?i)Steam"] floating enable
 for_window [class="(?i)blueman-manager"] floating enable resize set 800 600
 for_window [class="(?i)nm-connection-editor"] floating enable
+for_window [class="gnome-calculator"] floating enable
 for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 # switch to workspace with urgent window automatically
