@@ -62,6 +62,7 @@ plugins=(
 	kube-ps1
 	kubectl
 	ripgrep
+	sudo
 	tmux
 	z
 	zsh-vi-mode
@@ -71,6 +72,9 @@ plugins=(
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
+
+# Kube context
+RPS1='$(kube_ps1)'
 
 source $ZSH/oh-my-zsh.sh
 
