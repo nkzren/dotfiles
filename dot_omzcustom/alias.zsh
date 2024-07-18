@@ -29,16 +29,16 @@ alias tg=terragrunt
 alias p=pulumi 
 
 # TMUX
-alias t='byobu-tmux attach || byobu-tmux new-session'
+alias t='tmux attach || tmux new-session'
 
 # Attaches tmux to a session (example: ta portal)
-alias ta='byobu-tmux attach -t'
+alias ta='tmux attach -t'
 
 # Creates a new session
-alias tn='byobu-tmux new-session'
+alias tn='tmux new-session'
 
 # Lists all ongoing sessions
-alias tl='byobu-tmux list-sessions'
+alias tl='tmux list-sessions'
 
 alias c=chezmoi
 alias ca='chezmoi apply'
