@@ -11,3 +11,10 @@
   exact: true
   stripComponents: 1
   refreshPeriod: 168h # 7 days
+
+.omzcustom/themes/gruvbox.zsh-theme:
+  type: file
+  url: 'https://raw.githubusercontent.com/nkzren/gruvbox-zsh/master/gruvbox.zsh-theme'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h # 7 days

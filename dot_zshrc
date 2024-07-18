@@ -5,7 +5,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 zstyle ':omz:update' mode disabled
 
-ZSH_THEME="agnoster"
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
