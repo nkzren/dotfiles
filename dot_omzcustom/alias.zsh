@@ -29,16 +29,7 @@ alias tg=terragrunt
 alias p=pulumi 
 
 # TMUX
-alias t='tmux attach || tmux new-session'
-
-# Attaches tmux to a session (example: ta portal)
-alias ta='tmux attach -t'
-
-# Creates a new session
-alias tn='tmux new-session'
-
-# Lists all ongoing sessions
-alias tl='tmux list-sessions'
+alias td='tmux detach'
 
 alias c=chezmoi
 alias ca='chezmoi apply'
