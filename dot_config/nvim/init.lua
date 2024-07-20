@@ -1,9 +1,11 @@
-vim.cmd 'colorscheme desert'
+vim.cmd.colorscheme 'desert'
 
 vim.g.mapleader=' '
 vim.g.maplocalleader=' '
 
 local o = vim.opt
+
+o.wrap=false
 
 -- better search with / and ?
 o.ignorecase=true
@@ -18,14 +20,6 @@ o.tabstop=4
 o.shiftwidth=0
 o.softtabstop=-1
 
--- Easier clipboard
-local map = vim.api.nvim_set_keymap
-local map_opts = { noremap=true, silent=true }
-
-map('n', '<leader>y', '"+y', map_opts)
-map('v', '<leader>y', '"+y', map_opts)
-
-map('n', '<leader>p', '"+p', map_opts)
-map('n', '<leader>P', '"+P', map_opts)
-map('v', '<leader>p', '"+p', map_opts)
-
+-- Lazy Setup
+require("config.lazy")
+require("config.mappings")
