@@ -1,5 +1,6 @@
 return {
 	"RRethy/vim-illuminate",
+	"tpope/vim-commentary",
 	{ "Einenlum/yaml-revealer", ft = { "yaml", "helm" } },
 	{
 		'echasnovski/mini.surround',
