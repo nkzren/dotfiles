@@ -35,6 +35,9 @@ return {
 						nowait = false,
 					},
 					['<space>'] = nil,
+				},
+				buffers = {
+					follow_current_file = true,
 				}
 			}
 		}

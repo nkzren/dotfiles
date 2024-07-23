@@ -2,8 +2,6 @@ return {
 	{
 		"neoclide/coc.nvim",
 		branch = "release",
-		-- Set high priority for <CR> and <Tab> mappings
-		priority = 10,
 		config = function()
 			local map = vim.api.nvim_set_keymap
 			local set = vim.keymap.set

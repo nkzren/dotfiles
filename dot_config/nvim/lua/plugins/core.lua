@@ -1,6 +1,7 @@
 return {
 	"RRethy/vim-illuminate",
 	"tpope/vim-commentary",
+	"tpope/vim-sleuth",
 	{ "Einenlum/yaml-revealer", ft = { "yaml", "helm" } },
 	{
 		'echasnovski/mini.surround',
@@ -19,6 +20,8 @@ return {
 	},
 	{
 		"echasnovski/mini.pairs",
+		-- Should execute before CoC
+		priority = 40,
 		opts = {
 			skip_ts = { "string" },
 			skip_unbalanced = true,
@@ -35,7 +38,7 @@ return {
 			vim.g.comfortable_motion_friction = 130.0
 			vim.g.comfortable_motion_air_drag = 2.2
 
-			local opts = { noremap=true, silent=true }
+			local opts = { noremap = true, silent = true }
 			vim.api.nvim_set_keymap('n', '<C-d>', ':call comfortable_motion#flick(100)<CR>', opts)
 			vim.api.nvim_set_keymap('n', '<C-u>', ':call comfortable_motion#flick(-100)<CR>', opts)
 		end
@@ -43,11 +46,13 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		version = '*',
+		-- Should be after CoC
+		priority = 100,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"stevearc/aerial.nvim",
 		},
-		config = function(_, opts)
+		init = function()
 			local builtin = require("telescope.builtin")
 			local set = vim.keymap.set
 
@@ -56,8 +61,6 @@ return {
 			set("n", "<M-0>", builtin.buffers, {})
 			set("n", "<C-H>", builtin.help_tags, {})
 			set("n", "<M-q>", ":ccl<CR>", { noremap = true, silent = true })
-
-			require("telescope").setup(opts)
 		end,
 		opts = {
 			extensions = {
