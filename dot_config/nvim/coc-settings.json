@@ -1,12 +1,24 @@
 {
-	"Lua.diagnostics.globals": ["vim"],
+	"Lua.diagnostics.globals": [
+		"vim"
+	],
 	"languageserver": {
 		"terraform": {
 			"command": "terraform-ls",
-			"args": ["serve"],
+			"args": [
+				"serve"
+			],
 			"filetypes": [
 				"terraform",
 				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {}
+		},
+		"go": {
+			"command": "gopls",
+			"filetypes": [
+				"go"
 			],
 			"initializationOptions": {},
 			"settings": {}
