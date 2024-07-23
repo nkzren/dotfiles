@@ -21,5 +21,6 @@ o.shiftwidth=0
 o.softtabstop=-1
 
 -- Lazy Setup
-require("config.lazy")
-require("config.mappings")
+require('config.lazy')
+require('config.lsp')
+require('config.mappings')
