@@ -3,42 +3,46 @@ local noremap = { silent = true, noremap = true }
 
 return {
 	{
-		"catppuccin/nvim",
+		'folke/tokyonight.nvim',
+		lazy = false,
 		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme "catppuccin-macchiato"
-		end
+		init = function ()
+			vim.cmd[[colorscheme tokyonight]]
+		end,
+		opts = {
+			style = 'moon'
+		},
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		'nvim-neo-tree/neo-tree.nvim',
+		branch = 'v3.x',
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim",
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-web-devicons',
+			'MunifTanjim/nui.nvim',
+			'3rd/image.nvim',
 		},
 		init = function()
-			map("n", "<C-a>",":Neotree toggle<CR>" , noremap)
-			map("n", "<leader>T", ":Neotree<CR>", noremap)
+			map('n', '<C-a>', ':Neotree toggle<CR>', noremap)
+			map('n', '<leader>T', ':Neotree<CR>', noremap)
 		end,
 		opts = {
 			window = {
-				position = "right",
+				position = 'right',
 				mappings = {
-					["<tab>"] = {
-						"toggle_node",
+					['<tab>'] = {
+						'toggle_node',
 						nowait = false,
 					},
-					["<space>"] = nil,
+					['<space>'] = nil,
 				}
 			}
 		}
 	},
 	{
-		"rcarriga/nvim-notify",
-		config = function (_, opts)
-			local notify = require("notify")
+		'rcarriga/nvim-notify',
+		config = function(_, opts)
+			local notify = require('notify')
 			notify.setup(opts)
 			vim.notify = notify
 		end,
@@ -47,43 +51,43 @@ return {
 		}
 	},
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		priority = 1000,
 		config = true,
 		opts = {
 			options = {
-				theme = "nightfly"
+				theme = 'tokyonight',
 			},
-			extensions = { "neo-tree" }
+			extensions = { 'neo-tree' }
 		}
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
+		'lukas-reineke/indent-blankline.nvim',
+		main = 'ibl',
 		opts = {
 			indent = {
-				char = "┊"
+				char = '┊'
 			}
 		},
 	},
 	{
-		"stevearc/aerial.nvim",
+		'stevearc/aerial.nvim',
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons"
+			'nvim-treesitter/nvim-treesitter',
+			'nvim-tree/nvim-web-devicons'
 		},
-		config = function (_, opts)
-			vim.api.nvim_set_keymap("n", "<leader>A", "<cmd>AerialToggle!<CR>", { silent=true, noremap=true })
-			require("aerial").setup(opts)
+		config = function(_, opts)
+			vim.api.nvim_set_keymap('n', '<leader>A', '<cmd>AerialToggle!<CR>', { silent = true, noremap = true })
+			require('aerial').setup(opts)
 		end,
 		opts = {
 			on_attach = function(bufnr)
-				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+				vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+				vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
 			end,
 			layout = {
-				default_direction = "left",
+				default_direction = 'left',
 			}
 		}
 	},
