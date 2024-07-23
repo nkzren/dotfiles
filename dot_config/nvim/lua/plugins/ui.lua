@@ -3,6 +3,15 @@ local noremap = { silent = true, noremap = true }
 
 return {
 	{
+		"folke/which-key.nvim",
+		opts = {
+			spec = {
+				{ "<F11>", desc = "Decrement Selection", mode = "x" },
+				{ "<F12>", desc = "Increment Selection", mode = { "x", "n" } },
+			},
+		},
+	},
+	{
 		'folke/tokyonight.nvim',
 		lazy = false,
 		priority = 1000,

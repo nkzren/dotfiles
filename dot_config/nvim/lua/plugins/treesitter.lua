@@ -1,12 +1,9 @@
 return {
 	{
-		"folke/which-key.nvim",
-		opts = {
-			spec = {
-				{ "<F11>", desc = "Decrement Selection", mode = "x" },
-				{ "<F12>", desc = "Increment Selection", mode = { "x", "n" } },
-			},
-		},
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function (_, opts)
+			require("treesitter-context").setup(opts)
+		end
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -40,6 +37,7 @@ return {
 					"terraform",
 					"vim",
 					"vimdoc",
+					"yaml",
 				},
 				sync_install = false,
 				highlight = { enable = true },

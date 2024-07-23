@@ -2,7 +2,6 @@ return {
 	"RRethy/vim-illuminate",
 	"tpope/vim-commentary",
 	"tpope/vim-sleuth",
-	{ "Einenlum/yaml-revealer", ft = { "yaml", "helm" } },
 	{
 		'echasnovski/mini.surround',
 		version = '*',
@@ -43,6 +42,7 @@ return {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
+		priority = 100,
 		version = '*',
 		dependencies = {
 			"nvim-lua/plenary.nvim",
