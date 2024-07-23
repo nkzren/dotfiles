@@ -22,5 +22,7 @@ o.softtabstop=-1
 
 -- Lazy Setup
 require('config.lazy')
+
+-- Custom configs
 require('config.lsp')
 require('config.mappings')
