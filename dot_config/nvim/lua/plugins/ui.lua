@@ -6,8 +6,8 @@ return {
 		'folke/tokyonight.nvim',
 		lazy = false,
 		priority = 1000,
-		init = function ()
-			vim.cmd[[colorscheme tokyonight]]
+		init = function()
+			vim.cmd [[colorscheme tokyonight]]
 		end,
 		opts = {
 			style = 'moon'
@@ -36,8 +36,10 @@ return {
 					},
 					['<space>'] = nil,
 				},
-				buffers = {
-					follow_current_file = true,
+			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
 				}
 			}
 		}
