@@ -1,13 +1,13 @@
 return {
 	{
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        { "<F11>", desc = "Decrement Selection", mode = "x" },
-        { "<F12>", desc = "Increment Selection", mode = { "x", "n" } },
-      },
-    },
-  },
+		"folke/which-key.nvim",
+		opts = {
+			spec = {
+				{ "<F11>", desc = "Decrement Selection", mode = "x" },
+				{ "<F12>", desc = "Increment Selection", mode = { "x", "n" } },
+			},
+		},
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -19,10 +19,10 @@ return {
 			indent = { enable = true },
 		},
 		init = function(plugin)
-      require("lazy.core.loader").add_to_rtp(plugin)
-      require("nvim-treesitter.query_predicates")
-    end,
-		config = function ()
+			require("lazy.core.loader").add_to_rtp(plugin)
+			require("nvim-treesitter.query_predicates")
+		end,
+		config = function()
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
@@ -47,17 +47,17 @@ return {
 			})
 		end,
 		incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<C-M>",
-        node_incremental = "<C-M>",
-        scope_incremental = false,
-        node_decremental = "<bs>",
-      },
-    },
+			enable = true,
+			keymaps = {
+				init_selection = "<C-M>",
+				node_incremental = "<C-M>",
+				scope_incremental = false,
+				node_decremental = "<bs>",
+			},
+		},
 	},
 	{
-    "windwp/nvim-ts-autotag",
-    opts = {},
-  },
+		"windwp/nvim-ts-autotag",
+		opts = {},
+	},
 }

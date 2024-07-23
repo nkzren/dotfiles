@@ -19,6 +19,7 @@ o.rnu=false
 o.tabstop=4
 o.shiftwidth=0
 o.softtabstop=-1
+o.expandtab=false
 
 -- Lazy Setup
 require('config.lazy')
