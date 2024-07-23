@@ -8,6 +8,10 @@ map('n', '<M-k>', '<C-W>k', noremap)
 map('n', '<M-h>', '<C-W>h', noremap)
 map('n', '<M-l>', '<C-W>l', noremap)
 
+-- Navigate tabs
+map('n', '<M-1>',':tabprevious<CR>' , noremap)
+map('n', '<M-2>',':tabnext<CR>' , noremap)
+
 -- Resize windows
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
