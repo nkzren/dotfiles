@@ -2,12 +2,14 @@ return {
 	{
 		"neoclide/coc.nvim",
 		branch = "release",
+		-- Should be high priority to override Enter and Tab keys early
+		priority = 20,
 		config = function()
 			local map = vim.api.nvim_set_keymap
 			local set = vim.keymap.set
 
 			local noremap = { silent = true, noremap = true }
-			local expr = { silent = true, expr = true, noremap = true }
+			local expr = { silent = true, expr = true, noremap = true, replace_keycodes = false }
 			local nowait = { silent = true, expr = true, noremap = true, nowait = true }
 
 			function _G.check_back_space()
@@ -16,7 +18,8 @@ return {
 			end
 
 			-- Completion options
-			map('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', expr)
+			set("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], expr)
+			set("i", "<M-space>", "coc#refresh()", {silent = true, expr = true})
 			map("i", "<Tab>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', expr)
 			map('i', '<S-Tab>', 'coc#pum#visible() ? coc#pum#prev(1) : "<S-Tab>"', expr)
 

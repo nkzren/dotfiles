@@ -20,8 +20,6 @@ return {
 	},
 	{
 		"echasnovski/mini.pairs",
-		-- Should execute before CoC
-		priority = 40,
 		opts = {
 			skip_ts = { "string" },
 			skip_unbalanced = true,
@@ -46,8 +44,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		version = '*',
-		-- Should be after CoC
-		priority = 100,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"stevearc/aerial.nvim",
