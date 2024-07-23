@@ -58,7 +58,6 @@ return {
 
 			set("n", "<leader>fd", builtin.find_files, { noremap = true })
 			set("n", "<leader>rg", builtin.live_grep, {})
-			set("n", "<M-0>", builtin.buffers, {})
 			set("n", "<C-H>", builtin.help_tags, {})
 			set("n", "<M-q>", ":ccl<CR>", { noremap = true, silent = true })
 		end,

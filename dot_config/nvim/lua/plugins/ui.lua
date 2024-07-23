@@ -25,6 +25,7 @@ return {
 		init = function()
 			map('n', '<C-a>', ':Neotree toggle<CR>', noremap)
 			map('n', '<leader>T', ':Neotree<CR>', noremap)
+			map("n", "<M-0>", ':Neotree buffers<CR>', noremap)
 		end,
 		opts = {
 			window = {
