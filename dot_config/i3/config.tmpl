@@ -61,10 +61,10 @@ gaps inner 5
 gaps outer -2
 
 smart_gaps on
-hide_edge_borders none
+hide_edge_borders smart_no_gaps
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border none
+default_border pixel
 default_floating_border normal
 
 ########################################
@@ -93,18 +93,16 @@ set $gray #a89984
 set $darkgray #1d2021
 
 # Theme colors
-# class				border  	backgr.		text		indic.		child_border
-client.focused			$bg		$yellow		$darkgray	$aqua		$darkgray
-client.focused_inactive		$darkgray 	$darkgray	$blue		$blue		$darkgray
-client.unfocused		$darkgray	$darkgray	$gray		$yellow		$darkgray
-client.urgent			$red		$red		$gray		$red		$red
+# class                         border          backgr.         text            indic.          child_border
+client.focused                  $bg             $yellow         $darkgray       $aqua           $gray
+client.focused_inactive         $darkgray       $darkgray       $yellow         $darkgray       $darkgray
+client.unfocused                $darkgray       $darkgray       $gray           $darkgray       $darkgray
+client.urgent                   $red            $red            $gray           $red            $red
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-    ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
-    #i3bar_command i3bar
-    #status_command i3status | ~/.i3/i3-keyboard-layout i3status
     status_command SCRIPT_DIR=~/.config/i3blocks i3blocks | ~/.i3/i3-keyboard-layout i3status
     position top
 
@@ -117,13 +115,13 @@ bar {
     colors {
         background $bg
         statusline $gray
-        separator  $fg
+        separator  $gray
 
-        #                       border          background       text
-        focused_workspace       $fg             $blue            $darkgray
-        inactive_workspace      $bg             $darkgray        $gray
-        active_workspace        $bg             $darkgray        $gray
-        urgent_workspace        $bg             $aqua            $darkgray
+        #                       border          background      text
+        focused_workspace       $fg             $blue           $darkgray
+        inactive_workspace      $bg             $darkgray       $gray
+        active_workspace        $bg             $purple         $darkgray
+        urgent_workspace        $bg             $red            $darkgray
     }
 }
 
