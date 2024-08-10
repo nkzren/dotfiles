@@ -1,5 +1,5 @@
 -- Captures the group in (%a+) to ext argument and returns it
-local templatePattern = function (path, bufnr, ext)
+local templatePattern = function (_, _, ext)
   return ext
 end
 
