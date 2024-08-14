@@ -16,9 +16,9 @@ workspace_layout default
 workspace_auto_back_and_forth yes
 
 # Screen names
-set $monitor_first DP-4
-set $monitor_second DP-0
-set $monitor_third DP-0
+set $monitor_first {{ .screens.first }}
+set $monitor_second {{ .screens.second }}
+set $monitor_third {{ .screens.third }}
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -194,6 +194,10 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id spotify
 exec --no-startup-id solaar -w hide
 exec --no-startup-id firefox
+{{- if .workProfile }}
+exec --no-startup-id google-chrome
+exec --no-startup-id slack
+{{- end }}
 exec --no-startup-id rambox
 exec --no-startup-id ~/.i3/i3-keyboard-layout set us
 exec_always --no-startup-id $HOME/.fehbg
