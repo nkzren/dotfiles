@@ -121,7 +121,7 @@ bar {
         focused_workspace       $fg             $blue           $darkgray
         inactive_workspace      $bg             $darkgray       $gray
         active_workspace        $bg             $purple         $darkgray
-        urgent_workspace        $bg             $red            $darkgray
+        urgent_workspace        $red            $fg             $red
     }
 }
 
@@ -163,7 +163,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="pavucontrol"] floating enable
+for_window [class="Pavucontrol"] floating enable resize set 640 480
 for_window [class="pwvucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
