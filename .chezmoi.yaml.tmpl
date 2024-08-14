@@ -1,0 +1,17 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $workProfile := promptBoolOnce . "workProfile" "Work profile?" -}}
+{{- $screen_first := promptStringOnce . "screen_first" "first screen name (check with xrandr --listmonitors)" -}}
+{{- $screen_second := promptStringOnce . "screen_second" "second screen name" -}}
+{{- $screen_third := promptStringOnce . "screen_third" "third screen name" -}}
+
+data:
+  email: {{ $email | quote }}
+  workProfile: {{ $workProfile }}
+  screens:
+    first: {{ $screen_first }}
+    {{- if $screen_second }}
+    second: {{ $screen_second }}
+    {{- end -}}
+    {{- if $screen_third }}
+    third: {{ $screen_third }}
+    {{- end -}}
