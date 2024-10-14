@@ -59,7 +59,6 @@ plugins=(
 	git
 	kube-ps1
 	kubectl
-	ripgrep
 	sudo
 	tmux
 	z

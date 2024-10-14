@@ -87,5 +87,6 @@ return {
 		config = function()
 			require("mason").setup()
 		end
-	}
+	},
+	{ "fatih/vim-go", ft = { "go" }}
 }

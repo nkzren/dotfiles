@@ -32,9 +32,9 @@ return {
 			'3rd/image.nvim',
 		},
 		init = function()
-			map('n', '<C-a>', ':Neotree toggle<CR>', noremap)
-			map('n', '<leader>T', ':Neotree<CR>', noremap)
-			map("n", "<M-0>", ':Neotree buffers<CR>', noremap)
+			map('n', '<leader><space>', ':Neotree toggle<CR>', noremap)
+			map("n", "<M-9>", ':Neotree buffers<CR>', noremap)
+			map('n', '<M-0>', ':Neotree<CR>', noremap)
 		end,
 		opts = {
 			window = {
@@ -93,7 +93,7 @@ return {
 			'nvim-tree/nvim-web-devicons'
 		},
 		config = function(_, opts)
-			vim.api.nvim_set_keymap('n', '<leader>A', '<cmd>AerialToggle!<CR>', { silent = true, noremap = true })
+			vim.api.nvim_set_keymap('n', '<C-A>', '<cmd>AerialToggle!<CR>', { silent = true, noremap = true })
 			require('aerial').setup(opts)
 		end,
 		opts = {
