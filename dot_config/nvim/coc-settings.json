@@ -22,6 +22,20 @@
 			],
 			"initializationOptions": {},
 			"settings": {}
+		},
+		"helm": {
+			"command": "helm_ls",
+			"args": [
+				"serve"
+			],
+			"filetypes": [
+				"helm",
+				"helmfile"
+			],
+			"rootPatterns": [
+				"Chart.yaml"
+			]
 		}
-	}
+	},
+	"coc.preferences.formatOnSave": true
 }

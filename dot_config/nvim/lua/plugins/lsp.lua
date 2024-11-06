@@ -88,5 +88,6 @@ return {
 			require("mason").setup()
 		end
 	},
-	{ "fatih/vim-go", ft = { "go" }}
+	"towolf/vim-helm",
+	-- { "fatih/vim-go", ft = { "go" }}
 }

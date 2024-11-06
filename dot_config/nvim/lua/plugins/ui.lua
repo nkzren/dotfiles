@@ -29,7 +29,7 @@ return {
 			'nvim-lua/plenary.nvim',
 			'nvim-tree/nvim-web-devicons',
 			'MunifTanjim/nui.nvim',
-			'3rd/image.nvim',
+			-- '3rd/image.nvim',
 		},
 		init = function()
 			map('n', '<leader><space>', ':Neotree toggle<CR>', noremap)
