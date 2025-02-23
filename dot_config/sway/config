@@ -16,9 +16,31 @@ workspace_layout default
 workspace_auto_back_and_forth yes
 
 # Screen names
-set $monitor_first {{ .screens.first }}
-set $monitor_second {{ .screens.second }}
-set $monitor_third {{ .screens.third }}
+set $monitor_first "AOC 27G2G4 0x00001677"
+set $monitor_second "Acer Technologies KG241Q P 0x9263F2D6"
+set $monitor_third "Acer Technologies KG241Q P 0x9263F2D6"
+
+output $monitor_first  pos 0 0         mode 1920x1080@144.001Hz power on
+output $monitor_second pos 1920 -400   mode 1920x1080@143.855Hz power on transform 90
+
+input type:keyboard {
+    repeat_delay 300
+    repeat_rate 50
+    xkb_numlock enabled
+    
+    xkb_layout us,us
+    xkb_variant ,intl
+    xkb_options grp:rwin_toggle
+}
+
+input type:touchpad {
+    tap enabled
+}
+
+input type:pointer {
+    pointer_accel 0
+    scroll_factor 0.5
+}
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -99,21 +121,22 @@ client.focused_inactive         $darkgray       $darkgray       $yellow         
 client.unfocused                $darkgray       $darkgray       $gray           $darkgray       $darkgray
 client.urgent                   $red            $red            $gray           $red            $red
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+# Start swaybar to display a workspace bar (plus the system information i3status if available)
 bar {
     # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
     status_command i3status-rs
     position top
+    swaybar_command swaybar
 
-    bindsym button4 nop
-    bindsym button5 nop
+#     bindsym button4 nop
+#     bindsym button5 nop
     strip_workspace_numbers yes
 
-    font pango:Fira Code:style=Light 14
+    font pango:Fira Code:style=Light 12
 
     colors {
-        background #1e1e2e
+        background $bg
         statusline $gray
         separator  $gray
 
@@ -164,7 +187,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="(?i)Pavucontrol"] floating enable resize set 640 480
+for_window [class="Pavucontrol"] floating enable resize set 640 480
 for_window [class="pwvucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
@@ -195,16 +218,11 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id spotify
 exec --no-startup-id solaar -w hide
 exec --no-startup-id firefox
-{{- if .workProfile }}
-exec --no-startup-id google-chrome
-exec --no-startup-id slack
-{{- end }}
 exec --no-startup-id rambox
 exec --no-startup-id ~/.i3/i3-keyboard-layout set us
 exec_always --no-startup-id $HOME/.fehbg
-exec_always --no-startup-id /usr/bin/light-locker
+exec_always systemctl --user start sway-session.target
 
-exec_always "setxkbmap -layout us,us -variant ,intl -option 'grp:rwin_toggle'"
 # Disable ibus
 exec --no-startup-id ibus exit
 ########################################
@@ -341,7 +359,7 @@ bindsym $mod+Z exec --no-startup-id rofi -show-icons -show drun
 bindsym $mod+Ctrl+B exec firefox
 bindsym $mod+Ctrl+D exec discord
 bindsym $mod+Ctrl+E exec pcmanfm
-bindsym $mod+Ctrl+M exec pwvucontrol
+bindsym $mod+Ctrl+M exec pavucontrol
 bindsym $mod+Ctrl+O exec obsidian
 bindsym $mod+Ctrl+S exec spotify
 
@@ -352,9 +370,14 @@ bindsym $mod+Shift+N border none
 # hide/unhide bar
 bindsym $mod+B bar mode toggle
 
+# Cycle keyboard layouts
+bindsym $mod+$ALT+K exec ~/.i3/i3-keyboard-layout cycle us "us intl"
+bindsym $mod+$ALT+1 exec ~/.i3/i3-keyboard-layout set us
+bindsym $mod+$ALT+2 exec ~/.i3/i3-keyboard-layout set "us intl"
+
 # Restart bar on caps/num
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
-# bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Q mode "$mode_system"

@@ -2,7 +2,6 @@ return {
 	"RRethy/vim-illuminate",
 	"tpope/vim-commentary",
 	"tpope/vim-sleuth",
-	"luarocks/hererocks",
 	{
 		'echasnovski/mini.surround',
 		version = '*',

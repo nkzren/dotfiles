@@ -1,5 +1,6 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$PATH:~/.local/bin
 
 zstyle ':omz:update' mode disabled
 
@@ -52,7 +53,6 @@ ZSH_CUSTOM=$HOME/.omzcustom
 plugins=(
 	aliases
 	asdf
-	autojump
 	docker
 	docker-compose
 	fzf
