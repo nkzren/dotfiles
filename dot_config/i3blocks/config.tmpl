@@ -84,18 +84,6 @@ DIR=/
 interval=10
 separator=false
 
-{{- if not .workProfile }}
-[disk]
-label=⛁ /home
-interval=10
-separator=false
-
-[disk]
-label=⛁ /data
-DIR=/mnt/Data
-interval=10
-{{- end }}
-
 #[wifi]
 #INTERFACE=wlp0s20f3
 #label=w: 
@@ -121,7 +109,7 @@ interval=1
 #label=LOAD
 #interval=10
 
-{{ if .workProfile }}
+
 # Battery indicator
 #
 # The battery instance defaults to 0.
@@ -129,7 +117,6 @@ interval=1
 label=BAT
 label=⚡
 interval=30
-{{ end }}
 
 [calendar]
 # command=$SCRIPT_DIR/calendar

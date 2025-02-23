@@ -1,88 +1,78 @@
 return {
-  'tpope/vim-surround',
-  'tpope/vim-sleuth',
-  'tpope/vim-commentary',
+	"RRethy/vim-illuminate",
+	"tpope/vim-commentary",
+	"tpope/vim-sleuth",
+	{
+		'echasnovski/mini.surround',
+		version = '*',
+		opts = {
+			mappings = {
+				add = "gsa",        -- Add surrounding in Normal and Visual modes
+				delete = "gsd",     -- Delete surrounding
+				find = "gsf",       -- Find surrounding (to the right)
+				find_left = "gsF",  -- Find surrounding (to the left)
+				highlight = "gsh",  -- Highlight surrounding
+				replace = "gsr",    -- Replace surrounding
+				update_n_lines = "gsn", -- Update `n_lines`
+			},
+		}
+	},
+	{
+		"echasnovski/mini.pairs",
+		opts = {
+			skip_ts = { "string" },
+			skip_unbalanced = true,
+			markdown = true,
+		},
+		config = function(_, opts)
+			require("mini.pairs").setup(opts)
+		end
+	},
+	{
+		"yuttie/comfortable-motion.vim",
+		init = function()
+			vim.g.comfortable_motion_no_default_key_mappings = 1
+			vim.g.comfortable_motion_friction = 130.0
+			vim.g.comfortable_motion_air_drag = 2.2
 
-  { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" },
-  { "Einenlum/yaml-revealer", ft = {"yaml", "helm"} },
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_set_keymap('n', '<C-d>', ':call comfortable_motion#flick(100)<CR>', opts)
+			vim.api.nvim_set_keymap('n', '<C-u>', ':call comfortable_motion#flick(-100)<CR>', opts)
+		end
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		priority = 100,
+		version = '*',
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/aerial.nvim",
+		},
+		init = function()
+			local builtin = require("telescope.builtin")
+			local set = vim.keymap.set
 
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+			set("n", "<leader>fd", builtin.find_files, { noremap = true })
+			set("n", "<leader>rg", builtin.live_grep, {})
+			set("n", "<leader>H", builtin.help_tags, {})
+			set("n", "<M-q>", ":ccl<CR>", { noremap = true, silent = true })
+		end,
+		opts = {
+			extensions = {
+				aerial = {
+					show_nesting = {
+						["_"] = false, -- This key will be the default
+						json = true, -- You can set the option for specific filetypes
+						yaml = true,
+					},
+					show_columns = "both",
+				},
+			},
+		}
 
-  {
-    'stevearc/aerial.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-  },
-
-  'RRethy/vim-illuminate',
-
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {
-      map_c_h = true
-    }
-  },
-
-  -- Telescope
-  {
-    'nvim-telescope/telescope.nvim',
-    version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    init = function()
-      local builtin = require('telescope.builtin')
-      local set = vim.keymap.set
-
-      set('n', '<leader>fd', builtin.find_files, { noremap = true })
-      set('n', '<leader>rg', builtin.live_grep, {})
-      set('n', '<M-0>', builtin.buffers, {})
-      set('n', '<C-H>', builtin.help_tags, {})
-      set('n', '<M-q>', ':ccl<CR>', { noremap=true, silent=true })
-    end,
-  },
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
-
-  -- Git
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-    on_attach = function(bufnr)
-      vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
-
-      -- don't override the built-in and fugitive keymaps
-      local gs = package.loaded.gitsigns
-      vim.keymap.set({'n', 'v'}, ']c', function()
-        if vim.wo.diff then return ']c' end
-        vim.schedule(function() gs.next_hunk() end)
-        return '<Ignore>'
-      end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-      vim.keymap.set({'n', 'v'}, '[c', function()
-        if vim.wo.diff then return '[c' end
-        vim.schedule(function() gs.prev_hunk() end)
-        return '<Ignore>'
-      end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
-    end,
-  },
+	},
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release"
+	},
 }

@@ -1,0 +1,34 @@
+.oh-my-zsh:
+  type: archive
+  url: 'https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 720h # 30 days
+
+.omzcustom/plugins/zsh-vi-mode:
+  type: archive
+  url: 'https://github.com/jeffreytse/zsh-vi-mode/archive/master.tar.gz'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h # 7 days
+
+.omzcustom/themes/gruvbox.zsh-theme:
+  type: file
+  url: 'https://raw.githubusercontent.com/nkzren/gruvbox-zsh/master/gruvbox.zsh-theme'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h # 7 days
+
+.tmux/plugins/tpm:
+  type: archive
+  url: 'https://github.com/tmux-plugins/tpm/archive/master.tar.gz'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h # 7 days
+
+.config/ranger/plugins/ranger_devicons:
+  type: archive
+  url: 'https://github.com/alexanderjeurissen/ranger_devicons/archive/main.tar.gz'
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h # 7 days

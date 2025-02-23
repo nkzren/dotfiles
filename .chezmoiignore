@@ -1,13 +1,1 @@
-README.md
-install.sh
-install-omz.sh
-old/
-.config/ranger/plugins/*
-
-.oh-my-zsh
-.oh-my-zsh/cache
-
-dot_fehbg/*.png
-dot_fehbg/*.jpg
-
-dot_config/nvim/lazy-lock.json
+.oh-my-zsh/cache/

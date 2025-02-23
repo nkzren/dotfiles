@@ -1,39 +1,28 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.cmd.colorscheme 'desert'
 
-vim.g.go_disable_gohtmltmpl = 1
-
+vim.g.mapleader=' '
+vim.g.maplocalleader=' '
 local o = vim.opt
 
-o.listchars = { trail = '␣', tab = '|-', eol = '↵', extends = '>', precedes = '<'  }
-o.rnu=true
-o.nu=true
-o.mouse='a'
+o.wrap=false
 
-o.tabstop=4
-o.shiftwidth=4
-
+-- better search with / and ?
 o.ignorecase=true
 o.smartcase=true
 
--- Lazy Setup
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+-- line numbers
+o.nu=true
+o.rnu=false
 
--- Imports
-if not vim.g.vscode then
-  require('plugins')
-  require('lsp-config')
-  require('cmp-config')
-end
-require('mappings')
+-- Tab options
+o.tabstop=4
+o.shiftwidth=0
+o.softtabstop=-1
+o.expandtab=false
+
+-- Lazy Setup
+require('config.lazy')
+
+-- Custom configs
+require('config.lsp')
+require('config.mappings')
