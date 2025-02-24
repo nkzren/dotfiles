@@ -146,6 +146,7 @@ for_window [class="(?i)arandr"] floating enable border pixel 1 resize set 528 59
 for_window [class="(?i)solaar"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Pcmanfm"] floating enable border pixel 1 resize set 800 600
 for_window [class="(?i)Nautilus"] floating enable border pixel 1 resize set 800 600
+for_window [class="(?i)snapd-desktop-integration"] floating enable border pixel 1 resize set 640 480
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
@@ -205,6 +206,8 @@ exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id /usr/bin/light-locker
 
 exec_always "setxkbmap -layout us,us -variant ,intl -option 'grp:rwin_toggle'"
+bindsym $ALT+$mod+K --release exec "xkb-switch -n"
+
 # Disable ibus
 exec --no-startup-id ibus exit
 ########################################
@@ -300,7 +303,7 @@ bindsym $mod+Shift+s sticky disable;exec notify-send -u low 'sticky toggle'
 
 # Terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec i3-sensible-terminal
 
 # Panic moves
 bindsym $mod+Q kill
@@ -308,7 +311,6 @@ bindsym Ctrl+$ALT+$mod+Delete exec kitty -1 btop
 bindsym Ctrl+$ALT+$mod+K --release exec --no-startup-id xkill
 bindsym Ctrl+$ALT+$mod+L exec --no-startup-id light-locker-command -l
 bindsym Ctrl+$ALT+$mod+N --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Ctrl+$ALT+$mod+D exec --no-startup-id echo $PATH >> .i3_debug
 
 # Toggle window transparency
 bindsym $mod+T exec --no-startup-id sh -c 'pkill picom || picom'
