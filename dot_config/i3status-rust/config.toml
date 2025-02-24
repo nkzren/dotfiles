@@ -19,6 +19,16 @@ button = "left"
 cmd = "xkb-switch -n"
 
 [[block]]
+block = "bluetooth"
+mac = "AC:80:0A:83:18:CA" # Sony WH-1000XM4
+disconnected_format = ""
+format = " $icon "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+[[block]]
 block = "music"
 format = "$icon {$combo.str(max_w:20) $play $next |}"
 player = "spotify"
