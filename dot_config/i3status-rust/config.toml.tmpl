@@ -49,6 +49,7 @@ format = "$icon $mem_used_percents.eng(w:2) "
 format_alt = "$icon_swap $swap_used_percents.eng(w:2) "
 interval = 1
 
+{{- if not .workProfile }}
 [[block]]
 block = "disk_space"
 path = "/home"
@@ -58,6 +59,7 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = "$icon home: $available.eng(w:2) "
+{{- end }}
 
 [[block]]
 block = "disk_space"
