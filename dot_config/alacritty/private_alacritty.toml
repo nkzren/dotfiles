@@ -7,5 +7,5 @@ size = 8
 
 [general]
 import = [
-    "~/.config/alacritty/themes/tokyo-night.toml"
+    "~/.config/alacritty/themes/tokyo_night.toml"
 ]
