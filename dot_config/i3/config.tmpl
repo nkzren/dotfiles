@@ -205,7 +205,7 @@ exec --no-startup-id ~/.i3/i3-keyboard-layout set us
 exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id /usr/bin/light-locker
 
-exec_always "setxkbmap -layout us,us -variant ,intl -option 'grp:rwin_toggle'"
+exec_always "setxkbmap -layout us,us -variant ,intl -option"
 bindsym $ALT+$mod+K --release exec "xkb-switch -n"
 
 # Disable ibus

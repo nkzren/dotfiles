@@ -5,9 +5,6 @@ theme = "ctp-mocha"
 
 [icons]
 icons = "material-nf"
-[icons.overrides]
-bat = ["|E|", "|_|", "|=|", "|F|"]
-bat_charging = "|^| "
 
 [[block]]
 block = "keyboard_layout"
@@ -81,3 +78,8 @@ cmd = "pwvucontrol"
 block = "time"
 interval = 1
 format = "$icon  $timestamp.datetime(f:'%a %d/%m %H:%M:%S')"
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+missing_format = ""
