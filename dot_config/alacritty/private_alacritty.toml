@@ -3,7 +3,6 @@ normal.family = "FiraCode NerdFont Med"
 bold.family = "Fira Code NerdFont Med"
 italic.family = "Fira Code NerdFont Med"
 bold_italic.family = "Fira Code NerdFont Med"
-size = 8
 
 [general]
 import = [
