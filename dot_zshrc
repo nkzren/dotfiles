@@ -53,6 +53,7 @@ ZSH_CUSTOM=$HOME/.omzcustom
 plugins=(
 	aliases
 	asdf
+	aws
 	docker
 	docker-compose
 	fzf
