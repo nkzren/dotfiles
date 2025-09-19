@@ -23,6 +23,13 @@ return {
 		},
 	},
 	{
+		"Wansmer/treesj",
+		keys = {
+			{ "<leader>J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+		},
+		opts = { use_default_keymaps = false, max_join_length = 150 },
+	},
+	{
 		'nvim-neo-tree/neo-tree.nvim',
 		branch = 'v3.x',
 		dependencies = {
@@ -105,5 +112,11 @@ return {
 				default_direction = 'left',
 			}
 		}
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {},
+		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }
 	},
 }
