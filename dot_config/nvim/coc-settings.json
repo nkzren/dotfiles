@@ -37,6 +37,6 @@
 			]
 		}
 	},
-  "coc.preferences.formatOnSave": true,
-  "snippets.ultisnips.pythonPrompt": false
+	"coc.preferences.formatOnSave": false,
+	"snippets.ultisnips.pythonPrompt": false
 }

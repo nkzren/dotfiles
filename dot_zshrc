@@ -53,7 +53,6 @@ ZSH_CUSTOM=$HOME/.omzcustom
 plugins=(
 	aliases
 	asdf
-	aws
 	docker
 	docker-compose
 	fzf
@@ -93,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 
 # asdf autocompletion
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 # The following lines were added by zsh-newuser-install

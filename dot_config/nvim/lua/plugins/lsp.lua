@@ -89,5 +89,4 @@ return {
 		end
 	},
 	"towolf/vim-helm",
-	-- { "fatih/vim-go", ft = { "go" }}
 }
