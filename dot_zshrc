@@ -72,7 +72,7 @@ ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOQUIT=false
 
 # Kube context
-RPS1='$(kube_ps1)'
+RPROMPT='$(kube_ps1)'
 
 source $ZSH/oh-my-zsh.sh
 

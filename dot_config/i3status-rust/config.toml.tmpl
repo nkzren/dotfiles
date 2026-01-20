@@ -71,6 +71,7 @@ block = "time"
 interval = 1
 format = "$icon  $timestamp.datetime(f:'%a %d/%m %H:%M:%S')"
 
+{{- if .workProfile }}
 [[block]]
 block = "battery"
 format = " $icon $percentage ($time_remaining)"
@@ -78,3 +79,4 @@ device = "DisplayDevice"
 driver = "upower"
 not_charging_format = " $icon $percentage ($time_remaining)"
 missing_format = ""
+{{- end }}
