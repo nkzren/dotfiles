@@ -186,9 +186,11 @@ for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Free Account
 for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Webinar"] floating disable
 for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Meeting"] floating disable
 # for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Meeting"] floating disable
-# Prevent Zoom from grabbing mouse attention on the second monitor when
-# a chat pops-in
-no_focus [class="(.*join\?action\=join.*|.*zoom.*)"]
+# Prevent any Zoom window from stealing focus
+no_focus [class="(?i).*(join\?action\=join|zoom).*"]
+no_focus [instance="(?i).*(join\?action\=join|zoom).*"]
+no_focus [title="(?i).*zoom.*"]
+no_focus [class="(?i)(.*join\?action\=join.*|.*zoom.*)" title="(?i).*(is sharing|started sharing|screen sharing).*"]
 no_focus [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Workplace - Licensed account"]
 no_focus [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Licensed Account"]
 no_focus [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Free Account"]
@@ -206,7 +208,7 @@ no_focus [class="(.*join\?action\=join.*|.*zoom.*)" title="Meeting"]
 
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id xset r rate 300 60
+exec --no-startup-id xset r rate 250 60
 exec --no-startup-id nm-applet
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
@@ -221,8 +223,8 @@ exec --no-startup-id slack
 exec --no-startup-id ~/.i3/i3-keyboard-layout set us
 exec_always --no-startup-id /usr/bin/light-locker
 
-exec_always "setxkbmap -layout us,us -variant ,intl -option"
-bindsym $ALT+$mod+K --release exec "xkb-switch -n"
+exec_always --no-startup-id "setxkbmap -layout us,us -variant ,intl -option"
+bindsym $ALT+$mod+K exec "xkb-switch -n"
 
 # Disable ibus
 exec --no-startup-id ibus exit

@@ -1,3 +1,26 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-xset r rate 250 60
+REPEAT_DELAY=250
+REPEAT_RATE=60
+
+apply_repeat_rate() {
+  xset r rate "$REPEAT_DELAY" "$REPEAT_RATE"
+}
+
+apply_repeat_rate
+
+# Some Bluetooth keyboards reset X auto-repeat on reconnect.
+# Keep watching for input hierarchy changes and re-apply the rate.
+if command -v xinput >/dev/null 2>&1; then
+  if ! pgrep -f "xinput test-xi2 --root.*xset r rate $REPEAT_DELAY $REPEAT_RATE" >/dev/null 2>&1; then
+    (
+      xinput test-xi2 --root 2>/dev/null | while IFS= read -r line; do
+        case "$line" in
+          *HierarchyChanged*|*SlaveAdded*|*DeviceChanged*)
+            apply_repeat_rate
+            ;;
+        esac
+      done
+    ) &
+  fi
+fi
 # sh -c '~/.screenlayout/default.sh; true'
