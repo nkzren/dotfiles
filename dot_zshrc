@@ -4,8 +4,8 @@ export PATH=$PATH:~/.local/bin
 
 zstyle ':omz:update' mode disabled
 
-ZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
+ZSH_THEME="xiong-chiamiov-plus"
+# SOLARIZED_THEME="dark"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -53,6 +53,7 @@ ZSH_CUSTOM=$HOME/.omzcustom
 plugins=(
 	aliases
 	asdf
+	aws
 	docker
 	docker-compose
 	fzf
@@ -72,7 +73,7 @@ ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOQUIT=false
 
 # Kube context
-RPROMPT='$(kube_ps1)'
+RPROMPT=' $(kube_ps1)'
 
 source $ZSH/oh-my-zsh.sh
 

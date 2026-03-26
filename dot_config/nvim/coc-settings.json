@@ -21,7 +21,7 @@
 				"go"
 			],
 			"initializationOptions": {},
-			"settings": {}
+			"settings": {},
 		},
 		"helm": {
 			"command": "helm_ls",
@@ -37,6 +37,9 @@
 			]
 		}
 	},
-	"coc.preferences.formatOnSave": false,
+	"[json]": {
+		"coc.preferences.formatOnSave": false,
+	},
+	"coc.preferences.formatOnSave": true,
 	"snippets.ultisnips.pythonPrompt": false
 }

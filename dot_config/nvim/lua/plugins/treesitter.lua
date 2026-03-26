@@ -13,7 +13,7 @@ return {
 		},
 		opts = {
 			highlight = { enable = true },
-			indent = { enable = true },
+			indent = { enable = false },
 		},
 		init = function(plugin)
 			require("lazy.core.loader").add_to_rtp(plugin)
@@ -41,7 +41,7 @@ return {
 				},
 				sync_install = false,
 				highlight = { enable = true },
-				indent = { enable = true },
+				indent = { enable = false },
 			})
 		end,
 		incremental_selection = {

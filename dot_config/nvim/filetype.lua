@@ -8,6 +8,7 @@ vim.filetype.add({
     ['.git/config'] = 'gitconfig',
   },
   extension = {
+	mdc = 'markdown',
 	yml = 'yaml',
   },
   pattern = {
