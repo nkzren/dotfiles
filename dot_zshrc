@@ -69,7 +69,7 @@ plugins=(
 # tmux config
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_AUTOQUIT=false
 
 # Kube context
@@ -103,13 +103,7 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
-
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
-
-# bash-compatible reverse i-search
-bindkey '^R' history-incremental-search-backward
 
 # Remove duplicates from history
 setopt HIST_EXPIRE_DUPS_FIRST
