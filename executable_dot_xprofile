@@ -6,17 +6,44 @@ apply_repeat_rate() {
   xset r rate "$REPEAT_DELAY" "$REPEAT_RATE"
 }
 
-apply_repeat_rate
+apply_layout() {
+  # xkb-switch needs both groups (us + us(intl)); Bluetooth keyboard
+  # reconnects reset the keymap to the single-group system default
+  # (/etc/default/keyboard), which makes `xkb-switch -n` a silent no-op.
+  [ "$(xkb-switch -l 2>/dev/null | wc -l)" -ge 2 ] || \
+    setxkbmap -layout us,us -variant ,intl -option
+}
 
-# Some Bluetooth keyboards reset X auto-repeat on reconnect.
-# Keep watching for input hierarchy changes and re-apply the rate.
+apply_repeat_rate
+apply_layout
+
+# Some Bluetooth keyboards reset X auto-repeat and the XKB keymap when they
+# sleep and reconnect, and the re-added device can leave i3 without working
+# key grabs. Watch input hierarchy changes: re-apply the rate and keymap,
+# and recover i3 once the devices have settled.
+# Use restart only if reload proves insufficient to restore bindings.
+I3_RECOVER_ACTION=reload
+
 if command -v xinput >/dev/null 2>&1; then
-  if ! pgrep -f "xinput test-xi2 --root.*xset r rate $REPEAT_DELAY $REPEAT_RATE" >/dev/null 2>&1; then
+  if ! pgrep -u "$(id -u)" -f '^xinput test-xi2 --root$' >/dev/null 2>&1; then
     (
+      recover_pid=
       xinput test-xi2 --root 2>/dev/null | while IFS= read -r line; do
         case "$line" in
           *HierarchyChanged*|*SlaveAdded*|*DeviceChanged*)
             apply_repeat_rate
+            apply_layout
+            if [ -z "$recover_pid" ] || ! kill -0 "$recover_pid" 2>/dev/null; then
+              (
+                sleep 2
+                if command -v timeout >/dev/null 2>&1 &&
+                  command -v i3-msg >/dev/null 2>&1 &&
+                  pgrep -x i3 >/dev/null 2>&1; then
+                  timeout 5 i3-msg "$I3_RECOVER_ACTION" >/dev/null 2>&1
+                fi
+              ) &
+              recover_pid=$!
+            fi
             ;;
         esac
       done

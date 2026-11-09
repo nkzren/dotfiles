@@ -1,0 +1,17 @@
+#!/bin/sh
+# us <-> us(intl) toggle that self-repairs the XKB keymap.
+#
+# The two-group keymap (us + us(intl)) is only established by i3's
+# `exec_always setxkbmap` line. When the Bluetooth keyboard sleeps and
+# reconnects, the X server re-applies the single-group system default
+# (/etc/default/keyboard), and `xkb-switch -n` becomes a silent no-op.
+# Detect a dead toggle, re-apply the keymap, and switch again.
+
+before=$(xkb-switch -p 2>/dev/null)
+xkb-switch -n >/dev/null 2>&1
+after=$(xkb-switch -p 2>/dev/null)
+
+if [ -z "$after" ] || [ "$before" = "$after" ]; then
+    setxkbmap -layout us,us -variant ,intl -option
+    xkb-switch -n >/dev/null 2>&1
+fi

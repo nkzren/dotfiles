@@ -219,11 +219,12 @@ exec --no-startup-id solaar -w hide
 exec --no-startup-id google-chrome
 exec --no-startup-id slack
 {{- end }}
-exec --no-startup-id ~/.i3/i3-keyboard-layout set us
-exec_always --no-startup-id /usr/bin/light-locker
-
 exec_always --no-startup-id "setxkbmap -layout us,us -variant ,intl -option"
-bindsym $ALT+$mod+K exec "xkb-switch -n"
+# Keycode 45 = K; bindcode avoids keysym re-translation after keymap changes.
+# kbd-toggle self-repairs the two-group keymap that Bluetooth keyboard
+# reconnects reset (X re-applies the single-group default from
+# /etc/default/keyboard), then advances the group.
+bindcode $ALT+$mod+45 exec --no-startup-id ~/.local/bin/kbd-toggle
 
 # Disable ibus
 exec --no-startup-id ibus exit
