@@ -2,6 +2,7 @@ return {
 	"RRethy/vim-illuminate",
 	"tpope/vim-commentary",
 	"tpope/vim-sleuth",
+	"nvim-treesitter/nvim-treesitter",
 	{
 		'echasnovski/mini.surround',
 		version = '*',
